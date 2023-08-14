@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood-project",
+  "version": "1.0.0",
+  "description": "Ohmyfood! mobile website with CSS animations",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tristan-A/TristanArcas_2_081123_A.git"
+  },
+  "author": "Tristan Arcas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tristan-A/TristanArcas_2_081123_A/issues"
+  },
+  "homepage": "https://github.com/Tristan-A/TristanArcas_2_081123_A#readme"
+}
