@@ -1,6 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Shrikhand&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* || VARIABLES */
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$font-text: 'Roboto', sans-serif;
+$font-title: 'Shrikhand', cursive;
 
 /* || HEADER */
 .header {
@@ -10,5 +29,29 @@
   padding: 25px 0 15px 0;
   &__logo {
     width: 45%;
+  }
+}
+
+/* || FOOTER */
+.footer {
+  background-color: #353535;
+  color: #FFF;
+  padding: 1% 5% 3% 5%;
+  &__heading {
+    font-family: $font-title;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  &__links{
+    line-height: 1.5;
+    font-family: $font-text;
+    font-size: 16px;
+    font-weight: 300;
+    i {
+      width: 15px;
+    }
+    span {
+      padding-left: 5px;
+    }
   }
 }
