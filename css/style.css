@@ -25,6 +25,18 @@ ul {
   width: 45%;
 }
 
+/* || LOCATION */
+.location {
+  background-color: #ebebeb;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  gap: 20px;
+  justify-content: center;
+  padding: 15px 0 15px 0;
+}
+
 /* || FOOTER */
 .footer {
   background-color: #353535;

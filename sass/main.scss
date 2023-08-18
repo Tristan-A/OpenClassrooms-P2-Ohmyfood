@@ -15,6 +15,7 @@ ul {
 }
 
 /* || VARIABLES */
+$color-background: #FFF;
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
@@ -30,6 +31,18 @@ $font-title: 'Shrikhand', cursive;
   &__logo {
     width: 45%;
   }
+}
+
+/* || LOCATION */
+.location {
+  background-color: darken($color-background, 8);
+  display: flex;
+  font-family: $font-text;
+  font-size: 16px;
+  font-weight: 700;
+  gap: 20px;
+  justify-content: center;
+  padding: 15px 0 15px 0;
 }
 
 /* || FOOTER */
