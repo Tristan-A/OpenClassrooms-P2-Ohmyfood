@@ -45,11 +45,36 @@ $font-title: 'Shrikhand', cursive;
   padding: 15px 0 15px 0;
 }
 
+/* || INTRO */
+.intro {
+  background-color: darken($color-background, 4);
+  font-family: $font-text;
+  justify-content: center;
+  padding: 40px 30px 50px 30px;
+  text-align: center;
+  &__heading {
+    font-size: 26px;
+    margin-top: 0;
+  }
+  &__paragraph {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 40px 0 30px 0;
+  }
+  &__btn {
+    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+    border: none;
+    border-radius: 50px;
+    color: #FFF;
+    padding: 16px 26px 16px 26px;
+  }
+}
+
 /* || FOOTER */
 .footer {
   background-color: #353535;
   color: #FFF;
-  padding: 1% 5% 3% 5%;
+  padding: 5px 20px 15px 20px;
   &__heading {
     font-family: $font-title;
     font-size: 18px;
