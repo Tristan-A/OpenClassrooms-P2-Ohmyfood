@@ -42,7 +42,6 @@ ul {
 .intro {
   background-color: whitesmoke;
   font-family: "Roboto", sans-serif;
-  justify-content: center;
   padding: 40px 30px 50px 30px;
   text-align: center;
 }
@@ -62,6 +61,44 @@ ul {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   color: #FFF;
   padding: 16px 26px 16px 26px;
+}
+
+/* || INSTRUCTIONS */
+.instructions {
+  font-family: "Roboto", sans-serif;
+  padding: 40px 20px 50px 20px;
+}
+.instructions__heading {
+  margin: 0 0 25px 0;
+}
+.instructions__card {
+  background-color: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  margin-left: 14px;
+  padding: 30px 0 25px 30px;
+  position: relative;
+}
+.instructions__card__number {
+  background-color: #9356DC;
+  border-radius: 50%;
+  color: #FFF;
+  display: inline-block;
+  height: 25px;
+  left: -12.5px;
+  padding: 5px 0 0 0;
+  position: absolute;
+  text-align: center;
+  top: 25px;
+  width: 25px;
+}
+.instructions__card__icon {
+  color: #8c8c8c;
+  margin-left: 5px;
+}
+.instructions__card__text {
+  font-weight: 700;
+  margin-left: 20px;
 }
 
 /* || FOOTER */

@@ -50,7 +50,6 @@ $font-title: 'Shrikhand', cursive;
 .intro {
   background-color: darken($color-background, 4);
   font-family: $font-text;
-  justify-content: center;
   padding: 40px 30px 50px 30px;
   text-align: center;
   &__heading {
@@ -69,6 +68,44 @@ $font-title: 'Shrikhand', cursive;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     color: #FFF;
     padding: 16px 26px 16px 26px;
+  }
+}
+
+/* || INSTRUCTIONS */
+.instructions {
+  font-family: $font-text;
+  padding: 40px 20px 50px 20px;
+  &__heading {
+    margin: 0 0 25px 0;
+  }
+  &__card {
+    background-color: darken($color-background, 4);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    margin-left: 14px;
+    padding: 30px 0 25px 30px;
+    position: relative;
+    &__number {
+      background-color: $color-primary;
+      border-radius: 50%;
+      color: #FFF;
+      display:inline-block;
+      height: 25px;
+      left: -12.5px;
+      padding: 5px 0 0 0;
+      position: absolute;
+      text-align: center;
+      top: 25px;
+      width: 25px;
+    }
+    &__icon {
+      color: darken($color-background, 45);
+      margin-left: 5px;
+    }
+    &__text {
+      font-weight: 700;
+      margin-left: 20px;
+    }
   }
 }
 
