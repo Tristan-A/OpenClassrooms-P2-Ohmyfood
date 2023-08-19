@@ -64,15 +64,15 @@ ul {
   padding: 16px 26px 16px 26px;
 }
 
-/* || INSTRUCTIONS */
-.instructions {
+/* || HOW-TO */
+.how-to {
   font-family: "Roboto", sans-serif;
   padding: 45px 20px 45px 20px;
 }
-.instructions__heading {
+.how-to__heading {
   margin: 0 0 25px 0;
 }
-.instructions__card {
+.how-to__card {
   background-color: whitesmoke;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
@@ -80,7 +80,7 @@ ul {
   padding: 30px 0 25px 30px;
   position: relative;
 }
-.instructions__card__number {
+.how-to__card__number {
   background-color: #9356DC;
   border-radius: 50%;
   color: #FFF;
@@ -93,19 +93,19 @@ ul {
   top: 25px;
   width: 25px;
 }
-.instructions__card__icon {
+.how-to__card__icon {
   color: #8c8c8c;
   margin-left: 5px;
   width: 23px;
 }
-.instructions__card__icon--color {
+.how-to__card__icon--color {
   color: #9356DC;
 }
-.instructions__card__text {
+.how-to__card__text {
   font-weight: 700;
   margin-left: 20px;
 }
-.instructions__card--bg-color {
+.how-to__card--bg-color {
   background-color: hsl(267.3134328358, 65.6862745098%, 95%);
 }
 
