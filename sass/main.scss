@@ -22,6 +22,16 @@ $color-tertiary: #99E2D0;
 $font-text: 'Roboto', sans-serif;
 $font-title: 'Shrikhand', cursive;
 
+/* || FUNCTIONS */
+@function lighter($color) {
+  $hue: hue($color);
+  $sat: saturation($color);
+  $light: 95%;
+  $pastel: hsl($hue, $sat, $light);
+  
+  @return $pastel;
+}
+
 /* || HEADER */
 .header {
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
@@ -36,7 +46,7 @@ $font-title: 'Shrikhand', cursive;
 
 /* || LOCATION */
 .location {
-  background-color: darken($color-background, 8);
+  background-color: darken($color-background, 8%);
   display: flex;
   font-family: $font-text;
   font-size: 16px;
@@ -48,7 +58,7 @@ $font-title: 'Shrikhand', cursive;
 
 /* || INTRO */
 .intro {
-  background-color: darken($color-background, 4);
+  background-color: darken($color-background, 4%);
   font-family: $font-text;
   padding: 40px 30px 50px 30px;
   text-align: center;
@@ -74,15 +84,15 @@ $font-title: 'Shrikhand', cursive;
 /* || INSTRUCTIONS */
 .instructions {
   font-family: $font-text;
-  padding: 40px 20px 50px 20px;
+  padding: 45px 20px 45px 20px;
   &__heading {
     margin: 0 0 25px 0;
   }
   &__card {
-    background-color: darken($color-background, 4);
+    background-color: darken($color-background, 4%);
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-    margin-left: 14px;
+    margin: 0 0 24px 14px;
     padding: 30px 0 25px 30px;
     position: relative;
     &__number {
@@ -99,12 +109,19 @@ $font-title: 'Shrikhand', cursive;
       width: 25px;
     }
     &__icon {
-      color: darken($color-background, 45);
+      color: darken($color-background, 45%);
       margin-left: 5px;
+      width: 23px;
+      &--color {
+        color: $color-primary;
+      }
     }
     &__text {
       font-weight: 700;
       margin-left: 20px;
+    }
+    &--bg-color {
+      background-color: lighter($color-primary);
     }
   }
 }
