@@ -27,9 +27,9 @@ $font-title: 'Shrikhand', cursive;
   $hue: hue($color);
   $sat: saturation($color);
   $light: 95%;
-  $pastel: hsl($hue, $sat, $light);
+  $lighter: hsl($hue, $sat, $light);
   
-  @return $pastel;
+  @return $lighter;
 }
 
 /* || HEADER */
