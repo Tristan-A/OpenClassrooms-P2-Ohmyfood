@@ -109,6 +109,51 @@ ul {
   background-color: hsl(267.3134328358, 65.6862745098%, 95%);
 }
 
+/* || RESTAURANTS */
+.restaurants {
+  background-color: whitesmoke;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: "Roboto", sans-serif;
+  padding: 40px 20px 50px 20px;
+}
+.restaurants__heading {
+  flex: 1 0 100%;
+  margin: 0 0 25px 0;
+}
+.restaurants__card {
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex: 0 1 100%;
+  flex-flow: row wrap;
+  overflow: hidden;
+}
+.restaurants__card__img-wrap {
+  aspect-ratio: 16/9;
+  flex: 0 1 100%;
+  overflow: hidden;
+}
+.restaurants__card__img-wrap img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.restaurants__card__info {
+  align-items: center;
+  display: flex;
+  flex: 0 1 100%;
+  justify-content: space-between;
+  padding: 20px 30px 20px 20px;
+}
+.restaurants__card__info h3 {
+  margin: 0 0 10px 0;
+}
+.restaurants__card__info p {
+  margin: 0;
+}
+
 /* || FOOTER */
 .footer {
   background-color: #353535;

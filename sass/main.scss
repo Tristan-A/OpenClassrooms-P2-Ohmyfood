@@ -126,6 +126,51 @@ $font-title: 'Shrikhand', cursive;
   }
 }
 
+/* || RESTAURANTS */
+.restaurants {
+  background-color: darken($color-background, 4%);
+  display: flex;
+  flex-flow: row wrap;
+  font-family: $font-text;
+  padding: 40px 20px 50px 20px;
+  &__heading {
+    flex: 1 0 100%;
+    margin: 0 0 25px 0;
+  }
+  &__card {
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex: 0 1 100%;
+    flex-flow: row wrap;
+    overflow: hidden;
+    &__img-wrap {
+      aspect-ratio: 16/9;
+      flex: 0 1 100%;
+      overflow: hidden;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    &__info {
+      align-items: center;
+      display: flex;
+      flex: 0 1 100%;
+      justify-content: space-between;
+      padding: 20px 30px 20px 20px;
+      h3 {
+        margin: 0 0 10px 0;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
 /* || FOOTER */
 .footer {
   background-color: #353535;
