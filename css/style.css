@@ -127,6 +127,7 @@ ul {
   display: flex;
   flex: 0 1 100%;
   flex-flow: row wrap;
+  margin: 0 0 25px 0;
   overflow: hidden;
 }
 .restaurants__card__img-wrap {
