@@ -130,28 +130,28 @@ ul {
   margin: 0 0 25px 0;
   overflow: hidden;
 }
-.restaurants__card__img-wrap {
+.restaurants__img-wrap {
   aspect-ratio: 16/9;
   flex: 0 1 100%;
   overflow: hidden;
 }
-.restaurants__card__img-wrap img {
+.restaurants__img-wrap img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
-.restaurants__card__info {
+.restaurants__info {
   align-items: center;
   display: flex;
   flex: 0 1 100%;
   justify-content: space-between;
   padding: 20px 30px 20px 20px;
 }
-.restaurants__card__info h3 {
+.restaurants__info h3 {
   margin: 0 0 10px 0;
 }
-.restaurants__card__info p {
+.restaurants__info p {
   margin: 0;
 }
 
