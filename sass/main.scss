@@ -95,34 +95,34 @@ $font-title: 'Shrikhand', cursive;
     margin: 0 0 24px 14px;
     padding: 30px 0 25px 30px;
     position: relative;
-    &__number {
-      background-color: $color-primary;
-      border-radius: 50%;
-      color: #FFF;
-      display:inline-block;
-      height: 25px;
-      left: -12.5px;
-      padding: 5px 0 0 0;
-      position: absolute;
-      text-align: center;
-      top: 25px;
-      width: 25px;
-    }
-    &__icon {
-      color: darken($color-background, 45%);
-      margin-left: 5px;
-      width: 23px;
-      &--color {
-        color: $color-primary;
-      }
-    }
-    &__text {
-      font-weight: 700;
-      margin-left: 20px;
-    }
     &--bg-color {
       background-color: lighter($color-primary);
     }
+  }
+  &__step {
+    background-color: $color-primary;
+    border-radius: 50%;
+    color: #FFF;
+    display:inline-block;
+    height: 25px;
+    left: -12.5px;
+    padding: 5px 0 0 0;
+    position: absolute;
+    text-align: center;
+    top: 25px;
+    width: 25px;
+  }
+  &__icon {
+    color: darken($color-background, 45%);
+    margin-left: 5px;
+    width: 23px;
+    &--color {
+      color: $color-primary;
+    }
+  }
+  &__instruction {
+    font-weight: 700;
+    margin-left: 20px;
   }
 }
 
