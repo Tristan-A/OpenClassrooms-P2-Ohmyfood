@@ -145,6 +145,7 @@ $font-title: 'Shrikhand', cursive;
     flex-flow: row wrap;
     margin: 0 0 25px 0;
     overflow: hidden;
+    position: relative;
   }
   &__img-wrap {
     aspect-ratio: 16/9;
@@ -169,6 +170,24 @@ $font-title: 'Shrikhand', cursive;
     }
     p {
       margin: 0;
+    }
+  }
+  &__new {
+    background-color: $color-tertiary;
+    border-radius: 3px;
+    color: darken($color-tertiary, 50%);
+    display: none;
+    font-size: 14px;
+    font-weight: 400;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    top: 15px;
+    width: 80px;
+    &--on {
+      display: block;
     }
   }
 }

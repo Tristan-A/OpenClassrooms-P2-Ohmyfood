@@ -129,6 +129,7 @@ ul {
   flex-flow: row wrap;
   margin: 0 0 25px 0;
   overflow: hidden;
+  position: relative;
 }
 .restaurants__img-wrap {
   aspect-ratio: 16/9;
@@ -153,6 +154,24 @@ ul {
 }
 .restaurants__info p {
   margin: 0;
+}
+.restaurants__new {
+  background-color: #99E2D0;
+  border-radius: 3px;
+  color: #1b6150;
+  display: none;
+  font-size: 14px;
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  right: 15px;
+  text-align: center;
+  top: 15px;
+  width: 80px;
+}
+.restaurants__new--on {
+  display: block;
 }
 
 /* || FOOTER */
