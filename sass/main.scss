@@ -89,6 +89,12 @@ $font-title: 'Shrikhand', cursive;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     color: #FFF;
     padding: 16px 26px 16px 26px;
+    transition: box-shadow 450ms;
+    &:hover {
+      background: linear-gradient(to bottom right, lighten($color-secondary, 3%), lighten($color-primary, 3%));
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+    }
   }
 }
 
