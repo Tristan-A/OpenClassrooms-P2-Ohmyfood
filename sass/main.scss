@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -195,7 +195,6 @@ $font-title: 'Shrikhand', cursive;
     color: darken($color-tertiary, 50%);
     display: none;
     font-size: 14px;
-    font-weight: 400;
     height: 30px;
     line-height: 30px;
     position: absolute;
