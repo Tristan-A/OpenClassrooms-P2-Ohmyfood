@@ -1,6 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+/* || VARIABLES */
+/* || FUNCTIONS */
+/* || INITIAL */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -12,8 +19,6 @@ ul {
   padding-left: 0;
 }
 
-/* || VARIABLES */
-/* || FUNCTIONS */
 /* || HEADER */
 .header {
   align-items: center;
@@ -42,8 +47,6 @@ ul {
 .location {
   background-color: #ebebeb;
   display: flex;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
   font-weight: 700;
   gap: 20px;
   justify-content: center;
@@ -53,7 +56,6 @@ ul {
 /* || INTRO */
 .intro {
   background-color: whitesmoke;
-  font-family: "Roboto", sans-serif;
   padding: 40px 30px 50px 30px;
   text-align: center;
 }
@@ -83,7 +85,6 @@ ul {
 
 /* || HOW-TO */
 .how-to {
-  font-family: "Roboto", sans-serif;
   padding: 40px 20px 50px 20px;
 }
 .how-to__heading {
@@ -131,7 +132,6 @@ ul {
   background-color: whitesmoke;
   display: flex;
   flex-flow: row wrap;
-  font-family: "Roboto", sans-serif;
   padding: 40px 20px 50px 20px;
 }
 .restaurants__heading {
@@ -178,7 +178,6 @@ ul {
   color: #1b6150;
   display: none;
   font-size: 14px;
-  font-weight: 400;
   height: 30px;
   line-height: 30px;
   position: absolute;
@@ -204,8 +203,6 @@ ul {
 }
 .footer__links {
   line-height: 1.5;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
   font-weight: 300;
 }
 .footer__links a {

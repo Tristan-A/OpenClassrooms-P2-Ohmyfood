@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap');
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
 /* || VARIABLES */
 $white: #FFF;
 $black: #000;
@@ -31,6 +18,24 @@ $font-title: 'Shrikhand', cursive;
   $lighter: hsl($hue, $sat, $light);
   
   @return $lighter;
+}
+
+/* || INITIAL */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-text;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 /* || HEADER */
@@ -61,7 +66,6 @@ $font-title: 'Shrikhand', cursive;
 .location {
   background-color: darken($color-background, 8%);
   display: flex;
-  font-family: $font-text;
   font-weight: 700;
   gap: 20px;
   justify-content: center;
@@ -71,7 +75,6 @@ $font-title: 'Shrikhand', cursive;
 /* || INTRO */
 .intro {
   background-color: darken($color-background, 4%);
-  font-family: $font-text;
   padding: 40px 30px 50px 30px;
   text-align: center;
   &__heading {
@@ -101,7 +104,6 @@ $font-title: 'Shrikhand', cursive;
 
 /* || HOW-TO */
 .how-to {
-  font-family: $font-text;
   padding: 40px 20px 50px 20px;
   &__heading {
     margin: 0 0 25px 0;
@@ -149,7 +151,6 @@ $font-title: 'Shrikhand', cursive;
   background-color: darken($color-background, 4%);
   display: flex;
   flex-flow: row wrap;
-  font-family: $font-text;
   padding: 40px 20px 50px 20px;
   &__heading {
     flex: 1 0 100%;
@@ -220,7 +221,6 @@ $font-title: 'Shrikhand', cursive;
   }
   &__links{
     line-height: 1.5;
-    font-family: $font-text;
     font-weight: 300;
     a {
       color: $white;
