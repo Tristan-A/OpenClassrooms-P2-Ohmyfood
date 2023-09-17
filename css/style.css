@@ -182,6 +182,24 @@ ul {
 .restaurants__info p {
   margin: 0;
 }
+.restaurants__fav {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 10px 0 0;
+  position: relative;
+}
+.restaurants__fav i {
+  position: absolute;
+}
+.restaurants__fav i:last-child {
+  color: transparent;
+  transition: color 250ms;
+}
+.restaurants__fav i:hover {
+  cursor: pointer;
+  color: #FF79DA;
+}
 .restaurants__new {
   background-color: #99E2D0;
   border-radius: 3px;

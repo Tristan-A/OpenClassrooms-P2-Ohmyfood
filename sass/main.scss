@@ -200,6 +200,24 @@ ul {
       margin: 0;
     }
   }
+  &__fav {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px 0 0;
+    position: relative;
+    i {
+      position: absolute;
+      &:last-child {
+        color: transparent;
+        transition: color 250ms;
+      }
+      &:hover {
+        cursor: pointer;
+        color: $color-secondary;
+      }
+    }
+  }
   &__new {
     background-color: $color-tertiary;
     border-radius: 3px;
