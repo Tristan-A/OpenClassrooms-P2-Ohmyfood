@@ -148,6 +148,16 @@ ul {
   overflow: hidden;
   position: relative;
 }
+.restaurants__card a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.restaurants__card a:hover {
+  cursor: pointer;
+}
 .restaurants__img-wrap {
   aspect-ratio: 16/9;
   flex: 0 1 100%;
