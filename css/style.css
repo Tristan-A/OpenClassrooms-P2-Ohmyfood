@@ -135,7 +135,7 @@ ul {
   padding: 40px 20px 50px 20px;
 }
 .restaurants__heading {
-  flex: 1 0 100%;
+  flex: 0 1 100%;
   margin: 0 0 25px 0;
 }
 .restaurants__card {
@@ -252,6 +252,34 @@ ul {
 }
 
 /* || MENU */
+.menu-container {
+  background-color: whitesmoke;
+  border-radius: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 40px 20px 50px 20px;
+  position: relative;
+  top: -50px;
+  z-index: 1;
+}
+.menu-container__heading {
+  align-items: baseline;
+  display: flex;
+  flex: 0 1 100%;
+  justify-content: space-between;
+}
+.menu-container__name {
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  margin-top: 0;
+}
+.menu-container i {
+  margin-right: 20px;
+}
+
 /* || COURSE */
+.course {
+  flex: 0 1 100%;
+}
 
 /*# sourceMappingURL=style.css.map */
