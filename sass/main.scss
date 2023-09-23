@@ -288,6 +288,7 @@ ul {
   }
   &__name {
     font-family: $font-title;
+    font-size: 26px;
     font-weight: 400;
     margin-top: 0;
   }
@@ -300,11 +301,11 @@ ul {
 .course {
   flex: 0 1 100%;
   &__name {
-
+    font-size: 18px;
+    font-weight: 300;
   }
   &__dish {
     h3 {
-      
     }
     p {
 
