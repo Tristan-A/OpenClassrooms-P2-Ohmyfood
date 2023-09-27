@@ -300,6 +300,7 @@ ul {
 /* || COURSE */
 .course {
   flex: 0 1 100%;
+  width: 100%; // need this to cause text to overflow 
   &__name {
     font-size: 18px;
     font-weight: 300;
@@ -311,22 +312,55 @@ ul {
     display: flex;
     justify-content: space-between;
     margin: 0 0 20px 0;
+    overflow: hidden;
     padding: 15px 15px 15px 15px;
+    position: relative;
+    &:hover {
+      .course__price {
+        margin-right: 75px;
+      }
+      .course__icon {
+        right: 0;
+        &--rotate {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+  &__content {
+    overflow: hidden;
     h3 {
       margin: 0 0 10px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     p {
       margin: 0;
-    }
-    strong {
-      align-self: flex-end;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
+  &__price {
+    align-self: flex-end;
+    transition: margin 700ms ease-in-out;
+  }
   &__icon {
+    align-items: center;
     background-color: $color-tertiary;
     color: $white;
     display: flex;
-    align-items: center;
+    height: 100%;
     justify-content: center;
+    position: absolute;
+    top: 0;
+    transition: right 700ms ease-in-out;
+    right: -75px;
+    width: 75px;
+    &--rotate {
+      transform: rotate(0deg);
+      transition: transform 700ms ease-in-out;
+    }
   }
 }

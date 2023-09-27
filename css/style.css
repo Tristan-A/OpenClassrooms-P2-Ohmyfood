@@ -281,6 +281,7 @@ ul {
 /* || COURSE */
 .course {
   flex: 0 1 100%;
+  width: 100%;
 }
 .course__name {
   font-size: 18px;
@@ -293,23 +294,54 @@ ul {
   display: flex;
   justify-content: space-between;
   margin: 0 0 20px 0;
+  overflow: hidden;
   padding: 15px 15px 15px 15px;
+  position: relative;
 }
-.course__dish h3 {
+.course__dish:hover .course__price {
+  margin-right: 75px;
+}
+.course__dish:hover .course__icon {
+  right: 0;
+}
+.course__dish:hover .course__icon--rotate {
+  transform: rotate(360deg);
+}
+.course__content {
+  overflow: hidden;
+}
+.course__content h3 {
   margin: 0 0 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.course__dish p {
+.course__content p {
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-.course__dish strong {
+.course__price {
   align-self: flex-end;
+  transition: margin 700ms ease-in-out;
 }
 .course__icon {
+  align-items: center;
   background-color: #99E2D0;
   color: #FFF;
   display: flex;
-  align-items: center;
+  height: 100%;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  transition: right 700ms ease-in-out;
+  right: -75px;
+  width: 75px;
+}
+.course__icon--rotate {
+  transform: rotate(0deg);
+  transition: transform 700ms ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
