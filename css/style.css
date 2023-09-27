@@ -326,7 +326,7 @@ ul {
   margin-right: 75px;
 }
 .course__dish:hover .course__icon {
-  right: 0;
+  transform: translateX(-100%);
 }
 .course__dish:hover .course__icon--rotate {
   transform: rotate(360deg);
@@ -359,7 +359,8 @@ ul {
   justify-content: center;
   position: absolute;
   top: 0;
-  transition: right 700ms ease-in-out;
+  transform: translateX(0);
+  transition: transform 700ms ease-in-out;
   right: -75px;
   width: 75px;
 }
