@@ -295,6 +295,22 @@ ul {
   &__icon {
     margin-right: 20px;
   }
+  &__btn {
+    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba($black, 0.3);
+    color: $white;
+    margin: 20px auto 0;
+    padding: 16px 26px 16px 26px;
+    transition: box-shadow 450ms;
+    width: 175px;
+    &:hover {
+      background: linear-gradient(to bottom right, lighten($color-secondary, 3%), lighten($color-primary, 3%));
+      box-shadow: 0 4px 10px 0 rgba($black, 0.6);
+      cursor: pointer;
+    }
+  }
 }
 
 /* || COURSE */
@@ -309,6 +325,7 @@ ul {
     background-color: $color-background;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba($black, 0.1);
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     margin: 0 0 20px 0;
@@ -363,4 +380,5 @@ ul {
       transition: transform 700ms ease-in-out;
     }
   }
+  
 }
