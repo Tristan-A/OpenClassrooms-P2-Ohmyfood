@@ -93,11 +93,27 @@ ul {
     box-shadow: 0 4px 8px 0 rgba($black, 0.3);
     color: $white;
     padding: 16px 26px 16px 26px;
-    transition: box-shadow 450ms;
+    position: relative;
+    z-index: 1;
     &:hover {
-      background: linear-gradient(to bottom right, lighten($color-secondary, 3%), lighten($color-primary, 3%));
-      box-shadow: 0 4px 10px 0 rgba($black, 0.6);
       cursor: pointer;
+      &::after {
+        opacity: 1;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
+      box-shadow: 0 4px 8px 0 rgba($black, 0.4);
+      border-radius: 50px;
+      opacity: 0;
+      transition: opacity 250ms ease-out;
+      z-index: -1;
     }
   }
 }
@@ -303,12 +319,28 @@ ul {
     color: $white;
     margin: 20px auto 0;
     padding: 16px 26px 16px 26px;
-    transition: box-shadow 450ms;
+    position: relative;
     width: 175px;
-    &:hover {
-      background: linear-gradient(to bottom right, lighten($color-secondary, 3%), lighten($color-primary, 3%));
-      box-shadow: 0 4px 10px 0 rgba($black, 0.6);
+    z-index: 1;
+    &:hover {            
       cursor: pointer;
+      &::after {
+        opacity: 1;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
+      box-shadow: 0 4px 8px 0 rgba($black, 0.4);
+      border-radius: 50px;
+      opacity: 0;
+      transition: opacity 250ms ease-out;
+      z-index: -1;
     }
   }
 }
