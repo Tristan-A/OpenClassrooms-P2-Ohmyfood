@@ -10,6 +10,10 @@ $color-background: $white;
 $font-text: 'Roboto', sans-serif;
 $font-title: 'Shrikhand', cursive;
 
+$anim-duration: 1000ms;
+$anim-delay: 200ms;
+$num-cards: 3;
+
 /* || FUNCTIONS */
 @function lighter($color) {
   $hue: hue($color);
@@ -19,6 +23,19 @@ $font-title: 'Shrikhand', cursive;
   
   @return $lighter;
 }
+
+/* || ANIMATIONS */
+@keyframes card-load-anim {
+  from {
+    opacity: 0; // card starts transparent
+    transform: translateY(20px); // vertically offsets cards' starting position
+  }
+  to {
+    opacity: 1; // card is completely visible
+    transform: translateY(0); // card is in final position with no offset
+  }
+}
+
 
 /* || INITIAL */
 *, *::before, *::after {
@@ -402,6 +419,13 @@ ul {
         &--rotate {
           transform: rotate(360deg);
         }
+      }
+    }
+
+    animation: card-load-anim $anim-duration ease-out backwards; // remove infinite to stop animation loop
+    @for $i from 1 through $num-cards {
+      &--anim#{ $i } {
+      animation-delay: $anim-delay * $i; // delays each card's animation by a multiple of 200ms
       }
     }
   }

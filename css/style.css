@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 /* || VARIABLES */
 /* || FUNCTIONS */
+/* || ANIMATIONS */
+@keyframes card-load-anim {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* || INITIAL */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -374,6 +385,7 @@ ul {
   overflow: hidden;
   padding: 15px 15px 15px 15px;
   position: relative;
+  animation: card-load-anim 1000ms ease-out backwards;
 }
 .course__dish:hover .course__price {
   margin-right: 75px;
@@ -383,6 +395,15 @@ ul {
 }
 .course__dish:hover .course__icon--rotate {
   transform: rotate(360deg);
+}
+.course__dish--anim1 {
+  animation-delay: 200ms;
+}
+.course__dish--anim2 {
+  animation-delay: 400ms;
+}
+.course__dish--anim3 {
+  animation-delay: 600ms;
 }
 .course__content {
   overflow: hidden;
