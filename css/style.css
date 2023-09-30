@@ -149,6 +149,26 @@ ul {
   display: flex;
   flex-flow: row wrap;
   padding: 40px 20px 50px 20px;
+  /*
+    &__fav {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin: 0 10px 0 0;
+      position: relative;
+      i {
+        position: absolute;
+        &:last-child {
+          color: $color-secondary;
+          transition: color 250ms;
+        }
+        &:hover {
+          cursor: pointer;
+          color: $color-secondary;
+        }
+      }
+    }
+  */
 }
 .restaurants__heading {
   flex: 0 1 100%;
@@ -198,23 +218,24 @@ ul {
 .restaurants__info p {
   margin: 0;
 }
-.restaurants__fav {
+.restaurants__icon {
   align-items: center;
   display: flex;
   justify-content: center;
   margin: 0 10px 0 0;
   position: relative;
 }
-.restaurants__fav i {
+.restaurants__icon i {
   position: absolute;
 }
-.restaurants__fav i:last-child {
-  color: transparent;
-  transition: color 250ms;
-}
-.restaurants__fav i:hover {
+.restaurants__icon i:hover {
   cursor: pointer;
+  opacity: 1;
+}
+.restaurants__icon--anim {
   color: #FF79DA;
+  opacity: 0;
+  transition: opacity 250ms ease-out;
 }
 .restaurants__new {
   background-color: #99E2D0;

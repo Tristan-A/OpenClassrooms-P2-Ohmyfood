@@ -216,6 +216,7 @@ ul {
       margin: 0;
     }
   }
+/*
   &__fav {
     align-items: center;
     display: flex;
@@ -225,13 +226,33 @@ ul {
     i {
       position: absolute;
       &:last-child {
-        color: transparent;
+        color: $color-secondary;
         transition: color 250ms;
       }
       &:hover {
         cursor: pointer;
         color: $color-secondary;
       }
+    }
+  }
+*/
+  &__icon {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 10px 0 0;
+    position: relative;
+    i {
+      position: absolute;
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+    &--anim {
+      color: $color-secondary;
+      opacity: 0;
+      transition: opacity 250ms ease-out;
     }
   }
   &__new {
