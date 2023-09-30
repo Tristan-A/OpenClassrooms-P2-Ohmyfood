@@ -366,6 +366,7 @@ ul {
 .course__name {
   font-size: 18px;
   font-weight: 300;
+  animation: card-load-anim 1000ms ease-out backwards;
 }
 .course__name::after {
   border: 2px solid #99E2D0;

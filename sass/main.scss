@@ -397,6 +397,7 @@ ul {
       margin: 5px 0 0 0;
       width: 45px;
     }
+    animation: card-load-anim $anim-duration ease-out backwards;
   }
   &__dish {
     background-color: $color-background;
