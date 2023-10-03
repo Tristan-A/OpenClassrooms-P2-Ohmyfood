@@ -13,6 +13,7 @@ $font-title: 'Shrikhand', cursive;
 $anim-duration: 1000ms;
 $anim-delay: 200ms;
 $num-cards: 3;
+$repeat: 3;
 
 /* || FUNCTIONS */
 @function lighter($color) {
@@ -33,6 +34,27 @@ $num-cards: 3;
   to {
     opacity: 1; // card is completely visible
     transform: translateY(0); // card is in final position with no offset
+  }
+}
+
+@keyframes page-load-anim {
+  0% {
+    opacity: 0.95; // makes loading animation mostly visible
+  }
+  100% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes bounce-anim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -467,4 +489,37 @@ ul {
       transition: transform 700ms ease-in-out;
     }
   }
+}
+
+/* || PAGE LOAD ANIMATION */
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darken($white, 10%);
+  opacity: 0;
+  z-index: 1000;
+  animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
+  &__img {
+    $img-colors: ($color-primary, $color-secondary, $color-tertiary);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    &:not(:last-child){
+      margin-right: 25px;
+    }
+    animation: bounce-anim $anim-duration $repeat ease-in-out;
+    @for $i from 1 through 3 {
+      &--#{ $i } {
+        background-color: nth($img-colors, $i);  
+        animation-delay: $anim-delay * $i;      
+      }
+    }
+  }
+
 }
