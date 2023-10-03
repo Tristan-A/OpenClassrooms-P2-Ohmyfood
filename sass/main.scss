@@ -38,11 +38,9 @@ $repeat: 3;
 }
 
 @keyframes page-load-anim {
-  0% {
-    opacity: 0.95; // makes loading animation mostly visible
-  }
-  100% {
-    opacity: 0.95;
+  0%, 100%{
+    opacity: 1; // makes loading animation mostly visible
+    z-index: 1000;
   }
 }
 
@@ -503,7 +501,7 @@ ul {
   justify-content: center;
   background-color: darken($white, 10%);
   opacity: 0;
-  z-index: 1000;
+  z-index: -100;
   animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
   &__img {
     $img-colors: ($color-primary, $color-secondary, $color-tertiary);
