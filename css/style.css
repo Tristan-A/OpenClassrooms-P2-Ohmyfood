@@ -512,6 +512,9 @@ ul {
 .course__dish--anim3 {
   animation-delay: 600ms;
 }
+.course__dish--anim4 {
+  animation-delay: 800ms;
+}
 .course__content {
   overflow: hidden;
 }
