@@ -316,8 +316,12 @@ ul {
 /* || FOOTER */
 .footer {
   background-color: #353535;
+}
+.footer__wrap {
   color: #FFF;
   padding: 5px 20px 15px 20px;
+  margin: auto;
+  max-width: 1200px;
 }
 .footer__heading {
   font-family: "Shrikhand", cursive;

@@ -364,8 +364,12 @@ ul {
 /* || FOOTER */
 .footer {
   background-color: #353535;
-  color: $white;
-  padding: 5px 20px 15px 20px;
+  &__wrap {
+    color: $white;
+    padding: 5px 20px 15px 20px;
+    margin: auto;
+    max-width: 1200px;
+  }
   &__heading {
     font-family: $font-title;
     font-size: 18px;
