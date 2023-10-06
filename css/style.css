@@ -400,6 +400,16 @@ ul {
   font-weight: 400;
   margin: 0;
 }
+@media screen and (min-width: 768px) {
+  .menu__name {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .menu__name {
+    font-size: 34px;
+  }
+}
 .menu__icon {
   display: flex;
   justify-content: center;

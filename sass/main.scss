@@ -436,6 +436,12 @@ ul {
     font-size: 26px;
     font-weight: 400;
     margin: 0;
+    @include screen-md {
+      font-size: 30px;
+    }
+    @include screen-lg {
+      font-size: 34px;
+    }
   }
   &__icon {
     display: flex;
