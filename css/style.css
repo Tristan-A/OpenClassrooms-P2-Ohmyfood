@@ -50,22 +50,23 @@ ul {
 
 /* || HEADER */
 .header {
-  align-items: center;
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.header__wrap {
+  align-items: center;
   display: flex;
   height: 65px;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 20px 0 15px 0;
   position: relative;
 }
 .header__back {
   color: #000;
-  display: none;
   left: 20px;
   position: absolute;
-}
-.header__back--on {
-  display: inline;
 }
 .header__logo {
   max-height: 100%;
