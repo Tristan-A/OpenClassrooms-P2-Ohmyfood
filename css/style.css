@@ -517,9 +517,6 @@ ul {
 }
 .course__content h3 {
   margin: 0 0 10px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .course__content p {
   margin: 0;
