@@ -211,16 +211,26 @@ ul {
   */
 }
 .restaurants__wrap {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
   gap: 25px;
-  justify-content: space-between;
+  grid-auto-rows: 1fr;
+  grid-template: minmax(1px, auto)/1fr;
   padding: 40px 20px 50px 20px;
   margin: 0 auto;
   max-width: 1200px;
 }
+@media screen and (min-width: 768px) {
+  .restaurants__wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurants__wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .restaurants__heading {
-  flex: 0 1 100%;
+  grid-column: 1/-1;
   margin: 0;
 }
 @media screen and (min-width: 576px) {
@@ -232,15 +242,9 @@ ul {
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   display: flex;
-  flex: 0 1 100%;
   flex-flow: row wrap;
   overflow: hidden;
   position: relative;
-}
-@media screen and (min-width: 768px) {
-  .restaurants__card {
-    flex: 1 1 45%;
-  }
 }
 .restaurants__card a {
   position: absolute;
