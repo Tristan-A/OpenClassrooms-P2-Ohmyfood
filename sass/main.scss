@@ -116,12 +116,8 @@ ul {
   }
   &__back {
     color: $black;
-    //display: none;
     left: 20px;
     position: absolute;
-    &--on {
-      //display: inline;
-    }
   }
   &__logo {
     max-height: 100%;
