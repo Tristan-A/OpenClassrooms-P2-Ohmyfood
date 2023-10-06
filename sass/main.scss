@@ -390,11 +390,19 @@ ul {
 
 /* || RESTAURANT IMG */
 .restaurant-img {
+  @include screen-md {
+    margin: 0 auto;
+    max-height: 600px;
+    max-width: 1200px;
+  }
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
+    @include screen-lg {
+      object-position: 0 -55px;
+    }
   }
 }
 
@@ -402,12 +410,19 @@ ul {
 .menu {
   background-color: darken($color-background, 4%);
   border-radius: 50px 50px 0 0;
-  display: flex;
-  flex-flow: row wrap;
-  padding: 40px 20px 50px 20px;
+  margin: -50px auto 0;
+  max-width: 1200px;
   position: relative;
-  margin-top: -50px;
   z-index: 1;
+  &__wrap {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 40px 20px 50px 20px;
+    @include screen-md {
+      margin: 0 auto;
+      max-width: 66%;
+    }
+  }
   &__heading {
     align-items: baseline;
     display: flex;

@@ -347,23 +347,44 @@ ul {
 }
 
 /* || RESTAURANT IMG */
+@media screen and (min-width: 768px) {
+  .restaurant-img {
+    margin: 0 auto;
+    max-height: 600px;
+    max-width: 1200px;
+  }
+}
 .restaurant-img img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
+@media screen and (min-width: 992px) {
+  .restaurant-img img {
+    object-position: 0 -55px;
+  }
+}
 
 /* || MENU */
 .menu {
   background-color: whitesmoke;
   border-radius: 50px 50px 0 0;
+  margin: -50px auto 0;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+}
+.menu__wrap {
   display: flex;
   flex-flow: row wrap;
   padding: 40px 20px 50px 20px;
-  position: relative;
-  margin-top: -50px;
-  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .menu__wrap {
+    margin: 0 auto;
+    max-width: 66%;
+  }
 }
 .menu__heading {
   align-items: baseline;
