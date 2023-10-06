@@ -389,11 +389,13 @@ ul {
 }
 
 /* || RESTAURANT IMG */
-.main-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
+.restaurant-img {
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 /* || MENU */
