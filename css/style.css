@@ -355,7 +355,7 @@ ul {
 }
 
 /* || MENU */
-.menu-container {
+.menu {
   background-color: whitesmoke;
   border-radius: 50px 50px 0 0;
   display: flex;
@@ -365,22 +365,22 @@ ul {
   margin-top: -50px;
   z-index: 1;
 }
-.menu-container__heading {
+.menu__heading {
   align-items: baseline;
   display: flex;
   flex: 0 1 100%;
   justify-content: space-between;
 }
-.menu-container__name {
+.menu__name {
   font-family: "Shrikhand", cursive;
   font-size: 26px;
   font-weight: 400;
   margin-top: 0;
 }
-.menu-container__icon {
+.menu__icon {
   margin-right: 20px;
 }
-.menu-container__btn {
+.menu__btn {
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border: none;
   border-radius: 50px;
@@ -392,13 +392,13 @@ ul {
   width: 175px;
   z-index: 1;
 }
-.menu-container__btn:hover {
+.menu__btn:hover {
   cursor: pointer;
 }
-.menu-container__btn:hover::after {
+.menu__btn:hover::after {
   opacity: 1;
 }
-.menu-container__btn::after {
+.menu__btn::after {
   content: "";
   position: absolute;
   top: 0;
