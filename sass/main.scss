@@ -15,6 +15,32 @@ $anim-delay: 200ms;
 $num-cards: 3;
 $repeat: 3;
 
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px
+);
+
+/* || MIXINS */
+@mixin screen-sm {
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+
 /* || FUNCTIONS */
 @function lighter($color) {
   $hue: hue($color);
@@ -157,7 +183,10 @@ ul {
 
 /* || HOW-TO */
 .how-to {
-  padding: 40px 20px 50px 20px;
+  background-color: $white;
+  &__wrap {
+    padding: 40px 20px 50px 20px;
+  }
   &__heading {
     margin: 0 0 25px 0;
   }

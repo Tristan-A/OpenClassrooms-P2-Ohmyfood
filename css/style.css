@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 /* || VARIABLES */
+/* || MIXINS */
 /* || FUNCTIONS */
 /* || ANIMATIONS */
 @keyframes card-load-anim {
@@ -129,6 +130,9 @@ ul {
 
 /* || HOW-TO */
 .how-to {
+  background-color: #FFF;
+}
+.how-to__wrap {
   padding: 40px 20px 50px 20px;
 }
 .how-to__heading {
