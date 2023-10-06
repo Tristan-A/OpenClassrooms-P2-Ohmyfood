@@ -135,8 +135,19 @@ ul {
 .how-to__wrap {
   padding: 40px 20px 50px 20px;
 }
+@media screen and (min-width: 576px) {
+  .how-to__wrap {
+    margin: 0 auto;
+    max-width: 425px;
+  }
+}
 .how-to__heading {
   margin: 0 0 25px 0;
+}
+@media screen and (min-width: 576px) {
+  .how-to__heading {
+    text-align: center;
+  }
 }
 .how-to__card {
   background-color: whitesmoke;
@@ -205,10 +216,17 @@ ul {
   gap: 25px;
   justify-content: space-between;
   padding: 40px 20px 50px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 .restaurants__heading {
   flex: 0 1 100%;
   margin: 0;
+}
+@media screen and (min-width: 576px) {
+  .restaurants__heading {
+    text-align: center;
+  }
 }
 .restaurants__card {
   border-radius: 20px;
@@ -218,6 +236,11 @@ ul {
   flex-flow: row wrap;
   overflow: hidden;
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .restaurants__card {
+    flex: 1 1 45%;
+  }
 }
 .restaurants__card a {
   position: absolute;
