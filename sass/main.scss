@@ -391,9 +391,9 @@ ul {
 
 /* || RESTAURANT IMG */
 .restaurant-img {
+  max-height: 500px;
   @include screen-md {
     margin: 0 auto;
-    max-height: 600px;
     max-width: 1200px;
   }
   img {
@@ -435,7 +435,7 @@ ul {
     font-family: $font-title;
     font-size: 26px;
     font-weight: 400;
-    margin: 0;
+    margin: 0 20px 0 0;
     @include screen-md {
       font-size: 30px;
     }

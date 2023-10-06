@@ -348,10 +348,12 @@ ul {
 }
 
 /* || RESTAURANT IMG */
+.restaurant-img {
+  max-height: 500px;
+}
 @media screen and (min-width: 768px) {
   .restaurant-img {
     margin: 0 auto;
-    max-height: 600px;
     max-width: 1200px;
   }
 }
@@ -398,7 +400,7 @@ ul {
   font-family: "Shrikhand", cursive;
   font-size: 26px;
   font-weight: 400;
-  margin: 0;
+  margin: 0 20px 0 0;
 }
 @media screen and (min-width: 768px) {
   .menu__name {
