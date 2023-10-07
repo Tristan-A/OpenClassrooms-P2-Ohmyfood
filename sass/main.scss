@@ -147,10 +147,6 @@ ul {
   background-color: darken($color-background, 4%);
   padding: 40px 30px 50px 30px;
   text-align: center;
-  &__heading {
-    font-size: 26px;
-    margin-top: 0;
-  }
   &__paragraph {
     font-size: 18px;
     font-weight: 300;
@@ -440,9 +436,8 @@ ul {
   }
   &__name {
     font-family: $font-title;
-    font-size: 26px;
     font-weight: 400;
-    margin: 0 20px 0 0;
+    margin-right: 20px;
     @include screen-md {
       font-size: 30px;
     }
