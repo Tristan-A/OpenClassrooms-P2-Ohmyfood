@@ -16,7 +16,7 @@ $padding-footer: 20px;
 $padding-btn: 16px 26px;
 $padding-card-content: 15px;
 $padding-howto-card: 30px 0 30px 25px;
-
+$max-width-site: 1200px;
 
 $box-shadows: (
   header: 0 0 3px 3px rgba($black, 0.1),
@@ -41,6 +41,11 @@ $repeat: 3;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin max-page-width {
+  margin: 0 auto;
+  max-width: $max-width-site;
 }
 
 @mixin screen-sm {
@@ -127,9 +132,8 @@ ul {
   position: relative;
   &__wrap {
     @include center;
+    @include max-page-width;
     height: 65px;
-    margin: 0 auto;
-    max-width: 1200px;
     padding: $padding-header;
     position: relative;
   }
@@ -255,13 +259,12 @@ ul {
 .restaurants {
   background-color: darken($color-background, 4%);
   &__wrap {
+    @include max-page-width;
     display: grid;
     gap: 25px;
     grid-auto-rows: 1fr;
     grid-template: minmax(1px, auto) / 1fr;
     padding: $padding-section;
-    margin: 0 auto;
-    max-width: 1200px;
     @include screen-md {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -354,10 +357,9 @@ ul {
 .footer {
   background-color: #353535;
   &__wrap {
+    @include max-page-width;
     color: $white;
     padding: $padding-footer;
-    margin: auto;
-    max-width: 1200px;
   }
   &__heading {
     font-family: $font-title;
@@ -383,8 +385,7 @@ ul {
 .restaurant-img {
   max-height: 500px;
   @include screen-md {
-    margin: 0 auto;
-    max-width: 1200px;
+    @include max-page-width;
   }
   img {
     height: 100%;
@@ -399,10 +400,10 @@ ul {
 
 /* || MENU */
 .menu {
+  @include max-page-width;
   background-color: darken($color-background, 4%);
   border-radius: 50px 50px 0 0;
-  margin: -50px auto 0;
-  max-width: 1200px;
+  margin-top: -50px;
   position: relative;
   z-index: 1;
   &__wrap {

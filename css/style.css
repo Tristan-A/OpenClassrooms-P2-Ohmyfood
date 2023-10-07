@@ -57,9 +57,9 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 65px;
   margin: 0 auto;
   max-width: 1200px;
+  height: 65px;
   padding: 20px 0 15px 0;
   position: relative;
 }
@@ -188,13 +188,13 @@ ul {
   background-color: whitesmoke;
 }
 .restaurants__wrap {
+  margin: 0 auto;
+  max-width: 1200px;
   display: grid;
   gap: 25px;
   grid-auto-rows: 1fr;
   grid-template: minmax(1px, auto)/1fr;
   padding: 40px 20px 50px 20px;
-  margin: 0 auto;
-  max-width: 1200px;
 }
 @media screen and (min-width: 768px) {
   .restaurants__wrap {
@@ -295,10 +295,10 @@ ul {
   background-color: #353535;
 }
 .footer__wrap {
+  margin: 0 auto;
+  max-width: 1200px;
   color: #FFF;
   padding: 20px;
-  margin: auto;
-  max-width: 1200px;
 }
 .footer__heading {
   font-family: "Shrikhand", cursive;
@@ -343,10 +343,11 @@ ul {
 
 /* || MENU */
 .menu {
+  margin: 0 auto;
+  max-width: 1200px;
   background-color: whitesmoke;
   border-radius: 50px 50px 0 0;
-  margin: -50px auto 0;
-  max-width: 1200px;
+  margin-top: -50px;
   position: relative;
   z-index: 1;
 }
