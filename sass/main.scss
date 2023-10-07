@@ -9,6 +9,14 @@ $color-tertiary: #99E2D0;
 $color-background: $white;
 $font-text: 'Roboto', sans-serif;
 $font-title: 'Shrikhand', cursive;
+$padding-header: 20px 0 15px 0;
+$padding-location: 15px 0;
+$padding-section: 40px 20px 50px 20px;
+$padding-footer: 20px;
+$padding-btn: 16px 26px;
+$padding-card-content: 15px;
+$padding-howto-card: 30px 0 30px 25px;
+
 
 $box-shadows: (
   header: 0 0 3px 3px rgba($black, 0.1),
@@ -122,7 +130,7 @@ ul {
     height: 65px;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 20px 0 15px 0;
+    padding: $padding-header;
     position: relative;
   }
   &__back {
@@ -143,18 +151,18 @@ ul {
   font-weight: 700;
   gap: 20px;
   justify-content: center;
-  padding: 15px 0 15px 0;
+  padding: $padding-location;
 }
 
 /* || INTRO */
 .intro {
   background-color: darken($color-background, 4%);
-  padding: 40px 30px 50px 30px;
+  padding: $padding-section;
   text-align: center;
   &__paragraph {
     font-size: 18px;
     font-weight: 300;
-    margin: 40px 0 30px;
+    margin: 40px 10px 30px;
   }
   &__btn {
     background: linear-gradient(to bottom right, $color-secondary, $color-primary);
@@ -162,7 +170,8 @@ ul {
     border-radius: 50px;
     box-shadow: map-get($box-shadows, btn);
     color: $white;
-    padding: 16px 26px 16px 26px;
+
+    padding: $padding-btn;
     position: relative;
     z-index: 1;
     &:hover {
@@ -192,7 +201,7 @@ ul {
 .how-to {
   background-color: $white;
   &__wrap {
-    padding: 40px 20px 50px 20px;
+    padding: $padding-section;
     @include screen-sm {
       margin: 0 auto;
       max-width: 425px;
@@ -209,7 +218,7 @@ ul {
     border-radius: 20px;
     box-shadow: map-get($box-shadows, card);
     margin: 0 0 24px 14px;
-    padding: 30px 0 25px 30px;
+    padding: $padding-howto-card;
     position: relative;
     &--bg-color {
       background-color: lighter($color-primary);
@@ -222,7 +231,7 @@ ul {
     display:inline-block;
     height: 25px;
     left: -12.5px;
-    padding: 5px 0 0 0;
+    padding-top: 5px;
     position: absolute;
     text-align: center;
     top: 25px;
@@ -250,7 +259,7 @@ ul {
     gap: 25px;
     grid-auto-rows: 1fr;
     grid-template: minmax(1px, auto) / 1fr;
-    padding: 40px 20px 50px 20px;
+    padding: $padding-section;
     margin: 0 auto;
     max-width: 1200px;
     @include screen-md {
@@ -300,7 +309,7 @@ ul {
     display: flex;
     flex: 0 1 100%;
     justify-content: space-between;
-    padding: 15px 25px 15px 15px;
+    padding: $padding-card-content;
     h3 {
       margin-bottom: 10px;
     }
@@ -327,7 +336,7 @@ ul {
 */
   &__icon {
     @include center;
-    margin: 0 10px 0 0;
+    margin: 0 20px 0 0; // right 20px
     position: relative;
     i {
       position: absolute;
@@ -366,7 +375,7 @@ ul {
   background-color: #353535;
   &__wrap {
     color: $white;
-    padding: 5px 20px 15px 20px;
+    padding: $padding-footer; // make 20px all around
     margin: auto;
     max-width: 1200px;
   }
@@ -385,7 +394,7 @@ ul {
       width: 15px;
     }
     span {
-      padding-left: 5px;
+      padding-left: 5px; // margin left instead
     }
   }
 }
@@ -419,7 +428,7 @@ ul {
   &__wrap {
     display: flex;
     flex-flow: row wrap;
-    padding: 40px 20px 50px 20px;
+    padding: $padding-section;
     @include screen-md {
       margin: 0 auto;
       max-width: 66%;
@@ -470,7 +479,7 @@ ul {
     box-shadow: map-get($box-shadows, btn);
     color: $white;
     margin: 20px auto 0;
-    padding: 16px 26px 16px 26px;
+    padding: $padding-btn;
     position: relative;
     width: 175px;
     z-index: 1;
@@ -523,7 +532,7 @@ ul {
     justify-content: space-between;
     margin: 0 0 20px 0;
     overflow: hidden;
-    padding: 15px 15px 15px 15px;
+    padding: $padding-card-content;
     position: relative;
     &:hover {
       .course__price {
