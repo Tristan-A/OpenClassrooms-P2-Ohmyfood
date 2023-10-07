@@ -314,29 +314,9 @@ ul {
       margin-bottom: 10px;
     }
   }
-/*
-  &__fav {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin: 0 10px 0 0;
-    position: relative;
-    i {
-      position: absolute;
-      &:last-child {
-        color: $color-secondary;
-        transition: color 250ms;
-      }
-      &:hover {
-        cursor: pointer;
-        color: $color-secondary;
-      }
-    }
-  }
-*/
   &__icon {
     @include center;
-    margin: 0 20px 0 0; // right 20px
+    margin-right: 20px;
     position: relative;
     i {
       position: absolute;
@@ -375,7 +355,7 @@ ul {
   background-color: #353535;
   &__wrap {
     color: $white;
-    padding: $padding-footer; // make 20px all around
+    padding: $padding-footer;
     margin: auto;
     max-width: 1200px;
   }
@@ -394,7 +374,7 @@ ul {
       width: 15px;
     }
     span {
-      padding-left: 5px; // margin left instead
+      margin-left: 5px;
     }
   }
 }
@@ -539,7 +519,6 @@ ul {
         margin-right: 75px;
       }
       .course__icon {
-        // right: 0;
         transform: translateX(-100%);
         &--rotate {
           transform: rotate(360deg);
