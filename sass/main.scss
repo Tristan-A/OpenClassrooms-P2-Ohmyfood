@@ -504,6 +504,7 @@ ul {
   &__name {
     font-size: 18px;
     font-weight: 300;
+    margin: 15px 0;
     &::after {
       border: 2px solid $color-tertiary;
       content: "";
