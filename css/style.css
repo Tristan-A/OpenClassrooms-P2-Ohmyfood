@@ -139,7 +139,7 @@ ul {
   }
 }
 .how-to__heading {
-  margin: 0 0 25px 0;
+  margin-bottom: 25px;
 }
 @media screen and (min-width: 576px) {
   .how-to__heading {
@@ -228,7 +228,6 @@ ul {
 }
 .restaurants__heading {
   grid-column: 1/-1;
-  margin: 0;
 }
 @media screen and (min-width: 576px) {
   .restaurants__heading {
@@ -272,10 +271,7 @@ ul {
   padding: 15px 25px 15px 15px;
 }
 .restaurants__info h3 {
-  margin: 0 0 10px 0;
-}
-.restaurants__info p {
-  margin: 0;
+  margin-bottom: 10px;
 }
 .restaurants__icon {
   display: flex;
@@ -473,7 +469,7 @@ ul {
   border: 2px solid #99E2D0;
   content: "";
   display: block;
-  margin: 5px 0 0 0;
+  margin-top: 5px;
   width: 45px;
 }
 .course__dish {
@@ -514,10 +510,9 @@ ul {
   overflow: hidden;
 }
 .course__content h3 {
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
 }
 .course__content p {
-  margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

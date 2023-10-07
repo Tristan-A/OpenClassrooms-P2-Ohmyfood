@@ -199,7 +199,7 @@ ul {
     }
   }
   &__heading {
-    margin: 0 0 25px 0;
+    margin-bottom: 25px;
     @include screen-sm {
       text-align: center;
     }
@@ -262,7 +262,6 @@ ul {
   }
   &__heading {
     grid-column: 1 / -1;
-    margin: 0;
     @include screen-sm {
       text-align: center;
     }
@@ -303,10 +302,7 @@ ul {
     justify-content: space-between;
     padding: 15px 25px 15px 15px;
     h3 {
-      margin: 0 0 10px 0;
-    }
-    p {
-      margin: 0;
+      margin-bottom: 10px;
     }
   }
 /*
@@ -512,7 +508,7 @@ ul {
       border: 2px solid $color-tertiary;
       content: "";
       display: block;
-      margin: 5px 0 0 0;
+      margin-top: 5px;
       width: 45px;
     }
     animation: card-load-anim $anim-duration ease-out backwards;
@@ -551,10 +547,9 @@ ul {
   &__content {
     overflow: hidden;
     h3 {
-      margin: 0 0 10px 0;
+      margin-bottom: 10px;
     }
     p {
-      margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

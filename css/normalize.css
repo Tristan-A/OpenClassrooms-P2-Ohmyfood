@@ -42,6 +42,15 @@ h1 {
   margin: 0;
 }
 
+/**
+ * Remove margin from `h2`, `h3` and `p` elements
+ */
+
+ h2,
+ h3,
+ p {
+  margin: 0;
+ }
 /* Grouping content
    ========================================================================== */
 
