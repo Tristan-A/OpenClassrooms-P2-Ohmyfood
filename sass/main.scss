@@ -10,16 +10,23 @@ $color-background: $white;
 $font-text: 'Roboto', sans-serif;
 $font-title: 'Shrikhand', cursive;
 
-$anim-duration: 1000ms;
-$anim-delay: 200ms;
-$num-cards: 4;
-$repeat: 3;
+$box-shadows: (
+  header: 0 0 3px 3px rgba($black, 0.1),
+  btn: 0 4px 8px 0 rgba($black, 0.3),
+  btn-hover: 0 4px 8px 0 rgba($black, 0.4),
+  card: 0 4px 8px 0 rgba($black, 0.1)
+);
 
 $breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px
 );
+
+$anim-duration: 1000ms;
+$anim-delay: 200ms;
+$num-cards: 4;
+$repeat: 3;
 
 /* || MIXINS */
 @mixin screen-sm {
@@ -64,8 +71,8 @@ $breakpoints: (
 
 @keyframes page-load-anim {
   0%, 100%{
-    opacity: 1; // makes loading animation mostly visible
-    z-index: 1000;
+    opacity: 1; // makes loading animation visible
+    z-index: 1000; // places loading animation in front of all elements
   }
 }
 
@@ -102,7 +109,7 @@ ul {
 
 /* || HEADER */
 .header {
-  box-shadow: 0 0 3px 3px rgba($black, 0.1);
+  box-shadow: map-get($box-shadows, header);
   position: relative;
   &__wrap {
     align-items: center;
@@ -153,7 +160,7 @@ ul {
     background: linear-gradient(to bottom right, $color-secondary, $color-primary);
     border: none;
     border-radius: 50px;
-    box-shadow: 0 4px 8px 0 rgba($black, 0.3);
+    box-shadow: map-get($box-shadows, btn);
     color: $white;
     padding: 16px 26px 16px 26px;
     position: relative;
@@ -172,7 +179,7 @@ ul {
       bottom: 0;
       left: 0;
       background: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
-      box-shadow: 0 4px 8px 0 rgba($black, 0.4);
+      box-shadow: map-get($box-shadows, btn-hover);
       border-radius: 50px;
       opacity: 0;
       transition: opacity 250ms ease-out;
@@ -200,7 +207,7 @@ ul {
   &__card {
     background-color: darken($color-background, 4%);
     border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba($black, 0.1);
+    box-shadow: map-get($box-shadows, card);
     margin: 0 0 24px 14px;
     padding: 30px 0 25px 30px;
     position: relative;
@@ -262,7 +269,7 @@ ul {
   }
   &__card {
     border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba($black, 0.1);
+    box-shadow: map-get($box-shadows, card);
     display: flex;
     flex-flow: row wrap;
     overflow: hidden;
@@ -467,7 +474,7 @@ ul {
     background: linear-gradient(to bottom right, $color-secondary, $color-primary);
     border: none;
     border-radius: 50px;
-    box-shadow: 0 4px 8px 0 rgba($black, 0.3);
+    box-shadow: map-get($box-shadows, btn);
     color: $white;
     margin: 20px auto 0;
     padding: 16px 26px 16px 26px;
@@ -488,7 +495,7 @@ ul {
       bottom: 0;
       left: 0;
       background: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
-      box-shadow: 0 4px 8px 0 rgba($black, 0.4);
+      box-shadow: map-get($box-shadows, btn-hover);
       border-radius: 50px;
       opacity: 0;
       transition: opacity 250ms ease-out;
@@ -516,7 +523,7 @@ ul {
   &__dish {
     background-color: $color-background;
     border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba($black, 0.1);
+    box-shadow: map-get($box-shadows, card);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
