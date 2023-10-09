@@ -51,21 +51,21 @@ $repeat: 3;
   justify-content: center;
 }
 
-// Styling for title font
-@mixin title-font {
-  font-family: $font-title;
-  font-weight: map-get($font-weights, norm);  
-}
-
 // Page elements expand only up to a set width and are horizontally centered
 @mixin max-page-width {
   margin: 0 auto;
   max-width: $max-width-site;
 }
 
-// media query for small screens
-@mixin screen-sm {
-  @media screen and (min-width: map-get($breakpoints, sm)) {
+// Set the size of an object
+@mixin object-size($height: auto, $width: auto) {
+  height: $height;
+  width: $width;
+}
+
+// media query for large screens
+@mixin screen-lg {
+  @media screen and (min-width: map-get($breakpoints, lg)) {
     @content;
   }
 }
@@ -77,11 +77,17 @@ $repeat: 3;
   }
 }
 
-// media query for large screens
-@mixin screen-lg {
-  @media screen and (min-width: map-get($breakpoints, lg)) {
+// media query for small screens
+@mixin screen-sm {
+  @media screen and (min-width: map-get($breakpoints, sm)) {
     @content;
   }
+}
+
+// Styling for title font
+@mixin title-font {
+  font-family: $font-title;
+  font-weight: map-get($font-weights, norm);  
 }
 
 /* || FUNCTIONS */
@@ -249,17 +255,16 @@ ul {
     }
   }
   &__step {
+    @include object-size(25px, 25px);
     background-color: $color-primary;
     border-radius: 50%;
     color: $white;
     display:inline-block; // Change to block
-    height: 25px;
     left: -12.5px;
     padding-top: 5px; // Replace w/ line-height: 25px; to center
     position: absolute;
     text-align: center;
     top: 25px;
-    width: 25px;
   }
   &__icon {
     color: darken($color-background, 45%);
@@ -322,8 +327,7 @@ ul {
     flex: 0 1 100%;
     overflow: hidden;
     img {
-      height: 100%;
-      width: 100%;
+      @include object-size(100%, 100%);
       object-fit: cover;
       object-position: center;
     }
@@ -358,18 +362,17 @@ ul {
   }
   &__new {
     // Use center(mixin) and visibiliy property instead
+    @include object-size(30px, 80px);
     background-color: $color-tertiary;
     border-radius: 3px;
     color: darken($color-tertiary, 50%);
     display: none;
     font-size: 14px;
-    height: 30px;
     line-height: 30px;
     position: absolute;
     right: 15px;
     text-align: center;
     top: 15px;
-    width: 80px;
     &--on {
       display: block;
     }
@@ -410,8 +413,7 @@ ul {
     @include max-page-width;
   }
   img {
-    height: 100%;
-    width: 100%;
+    @include object-size(100%, 100%);
     object-fit: cover;
     object-position: center;
     @include screen-lg {
@@ -573,15 +575,14 @@ ul {
   }
   &__icon {
     @include center;
+    @include object-size(100%, 75px);
     background-color: $color-tertiary;
     color: $white;
-    height: 100%;
     position: absolute;
     top: 0;
     transform: translateX(0);
     transition: transform 700ms ease-in-out;
     right: -75px; // Causes element to overflow container and become hidden
-    width: 75px;
     &--rotate {
       transform: rotate(0deg);
       transition: transform 700ms ease-in-out;
@@ -601,17 +602,16 @@ ul {
   background-color: darken($white, 10%);
   opacity: 0;
   z-index: -100;  // Hides animation elements behind all other page elements
-  //animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
+  animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
   &__img {
     $img-colors: ($color-primary, $color-secondary, $color-tertiary);
     // Create and position the 3 bouncing balls
-    height: 25px;
-    width: 25px;
+    @include object-size(25px, 25px);
     border-radius: 50%;
     &:not(:last-child){
       margin-right: 25px;
     }
-    //animation: bounce-anim $anim-duration $repeat ease-in-out;
+    animation: bounce-anim $anim-duration $repeat ease-in-out;
     @for $i from 1 through 3 {
       &--#{ $i } {
         background-color: nth($img-colors, $i);  
