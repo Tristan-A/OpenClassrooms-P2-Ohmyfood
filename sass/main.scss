@@ -7,6 +7,8 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $color-background: $white;
+$color-btn: linear-gradient(to bottom right, $color-secondary, $color-primary);
+$color-btn-hov: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
 $font-text: 'Roboto', sans-serif;
 $font-title: 'Shrikhand', cursive;
 $padding-header: 20px 0 15px 0;
@@ -44,6 +46,13 @@ $repeat: 3;
 
 /* || MIXINS */
 
+// Sets base style for btns
+@mixin base-btn-style($bg-clr, $shadow) {
+  background: $bg-clr;
+  border: none;
+  border-radius: 50px;
+  box-shadow: $shadow;
+}
 // Vertical and horizontal centering
 @mixin center {
   display: flex;
@@ -210,12 +219,8 @@ ul {
     margin: 40px 10px 30px;
   }
   &__btn {
-    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
-    border: none;
-    border-radius: 50px;
-    box-shadow: map-get($box-shadows, btn);
+    @include base-btn-style($color-btn, map-get($box-shadows, btn));
     color: $white;
-
     padding: $padding-btn;
     position: relative;
     z-index: 1;
@@ -226,13 +231,11 @@ ul {
       }
     }
     &::after {
-      content: "";
-      position: absolute;
+      @include base-btn-style($color-btn-hov, map-get($box-shadows, btn-hover));
       @include cover-container;
-      background: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
-      box-shadow: map-get($box-shadows, btn-hover);
-      border-radius: 50px;
+      content: "";
       opacity: 0;
+      position: absolute;
       transition: opacity 250ms ease-out;
       z-index: -1;  // Keeps pseudo element behind button text
     }
