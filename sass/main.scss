@@ -51,6 +51,12 @@ $repeat: 3;
   justify-content: center;
 }
 
+// Styling for title font
+@mixin title-font {
+  font-family: $font-title;
+  font-weight: map-get($font-weights, norm);  
+}
+
 // Page elements expand only up to a set width and are horizontally centered
 @mixin max-page-width {
   margin: 0 auto;
@@ -379,9 +385,8 @@ ul {
     padding: $padding-footer;
   }
   &__heading {
-    font-family: $font-title;
+    @include title-font;
     font-size: 18px;
-    font-weight: map-get($font-weights, norm);
   }
   &__links{
     line-height: 1.5;
@@ -440,8 +445,7 @@ ul {
     margin-bottom: 15px;
   }
   &__name {
-    font-family: $font-title;
-    font-weight: map-get($font-weights, norm);
+    @include title-font;
     margin-right: 20px;
     @include screen-md {
       font-size: 30px;
