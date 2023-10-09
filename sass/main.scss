@@ -37,29 +37,35 @@ $num-cards: 4;
 $repeat: 3;
 
 /* || MIXINS */
+
+// Vertical and horizontal centering
 @mixin center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+// Page elements expand only up to a set width and are horizontally centered
 @mixin max-page-width {
   margin: 0 auto;
   max-width: $max-width-site;
 }
 
+// media query for small screens
 @mixin screen-sm {
   @media screen and (min-width: map-get($breakpoints, sm)) {
     @content;
   }
 }
 
+// media query for medium screens
 @mixin screen-md {
   @media screen and (min-width: map-get($breakpoints, md)) {
     @content;
   }
 }
 
+// media query for large screens
 @mixin screen-lg {
   @media screen and (min-width: map-get($breakpoints, lg)) {
     @content;
@@ -67,6 +73,8 @@ $repeat: 3;
 }
 
 /* || FUNCTIONS */
+
+// Makes given colour lighter
 @function lighter($color) {
   $hue: hue($color);
   $sat: saturation($color);
@@ -99,10 +107,10 @@ $repeat: 3;
   0% {
     transform: translateY(0);
   }
-  50% {
+  40% {
     transform: translateY(-20px);
   }
-  100% {
+  80% {
     transform: translateY(0);
   }
 }
@@ -133,7 +141,7 @@ ul {
   &__wrap {
     @include center;
     @include max-page-width;
-    height: 65px;
+    height: 65px;  // Fixed header height
     padding: $padding-header;
     position: relative;
   }
@@ -143,7 +151,7 @@ ul {
     position: absolute;
   }
   &__logo {
-    max-height: 100%;
+    max-height: 100%;  // Prevents logo from overflowing its container
     max-width: 45%;
   }
 }
@@ -196,7 +204,7 @@ ul {
       border-radius: 50px;
       opacity: 0;
       transition: opacity 250ms ease-out;
-      z-index: -1;
+      z-index: -1;  // Keeps pseudo element behind button text
     }
   }
 }
@@ -232,10 +240,10 @@ ul {
     background-color: $color-primary;
     border-radius: 50%;
     color: $white;
-    display:inline-block;
+    display:inline-block; // Change to block
     height: 25px;
     left: -12.5px;
-    padding-top: 5px;
+    padding-top: 5px; // Replace w/ line-height: 25px; to center
     position: absolute;
     text-align: center;
     top: 25px;
@@ -244,14 +252,14 @@ ul {
   &__icon {
     color: darken($color-background, 45%);
     margin-left: 5px;
-    width: 23px;
+    width: 23px;  // Makes following text line up evenly. -3px
     &--color {
       color: $color-primary;
     }
   }
   &__instruction {
     font-weight: 700;
-    margin-left: 20px;
+    margin-left: 20px;  // +5px
   }
 }
 
@@ -286,13 +294,14 @@ ul {
     overflow: hidden;
     position: relative;
     a {
+      // Covers entire card
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       &:hover {
-        cursor: pointer;
+        cursor: pointer;  // Apply to base settings up top
       }
     }
   }
@@ -328,6 +337,7 @@ ul {
         opacity: 1;
       }
     }
+    // Mark as favourite animation
     &--anim {
       color: $color-secondary;
       opacity: 0;
@@ -335,6 +345,7 @@ ul {
     }
   }
   &__new {
+    // Use center(mixin) and visibiliy property instead
     background-color: $color-tertiary;
     border-radius: 3px;
     color: darken($color-tertiary, 50%);
@@ -373,7 +384,7 @@ ul {
       color: $white;
     }
     i {
-      width: 15px;
+      width: 15px;  // Lines up following text evenly
     }
     span {
       margin-left: 5px;
@@ -383,7 +394,7 @@ ul {
 
 /* || RESTAURANT IMG */
 .restaurant-img {
-  max-height: 500px;
+  max-height: 500px;  // Some imgs are taller so this keeps them about the same height across screen sizes
   @include screen-md {
     @include max-page-width;
   }
@@ -405,7 +416,7 @@ ul {
   border-radius: 50px 50px 0 0;
   margin-top: -50px;
   position: relative;
-  z-index: 1;
+  z-index: 1; // Places menu on top of img
   &__wrap {
     display: flex;
     flex-flow: row wrap;
@@ -490,19 +501,20 @@ ul {
 /* || COURSE */
 .course {
   flex: 0 1 100%;
-  width: 100%; // need this to cause text to overflow 
+  width: 100%; // Need this to cause text to overflow 
   &__name {
     font-size: 18px;
     font-weight: 300;
     margin: 15px 0;
     &::after {
+      // Creates the coloured underline
       border: 2px solid $color-tertiary;
       content: "";
       display: block;
       margin-top: 5px;
       width: 45px;
     }
-    animation: card-load-anim $anim-duration ease-out backwards;
+    animation: card-load-anim $anim-duration ease-out;
   }
   &__dish {
     background-color: $color-background;
@@ -517,36 +529,36 @@ ul {
     position: relative;
     &:hover {
       .course__price {
-        margin-right: 75px;
+        margin-right: 75px; // Keeps spacing between price and icon during transition
       }
       .course__icon {
-        transform: translateX(-100%);
+        transform: translateX(-100%); // Slides entire icon element into view
         &--rotate {
           transform: rotate(360deg);
         }
       }
     }
-
+  
     animation: card-load-anim $anim-duration ease-out backwards; // remove infinite to stop animation loop
     @for $i from 1 through $num-cards {
       &--anim#{ $i } {
-      animation-delay: $anim-delay * $i; // delays each card's animation by a multiple of 200ms
+      animation-delay: $anim-delay * $i; // delays each card's animation by a multiple of the anim-delay
       }
     }
   }
   &__content {
-    overflow: hidden;
+    overflow: hidden; // Need for text-overflow to work
     h3 {
       margin-bottom: 10px;
     }
     p {
-      overflow: hidden;
+      overflow: hidden; // Need for text-overflow to work
       text-overflow: ellipsis;
-      white-space: nowrap;
+      white-space: nowrap;  // Text won't wrap and can overflow
     }
   }
   &__price {
-    align-self: flex-end;
+    align-self: flex-end; // Places price at bottom of element
     transition: margin 700ms ease-in-out;
   }
   &__icon {
@@ -558,7 +570,7 @@ ul {
     top: 0;
     transform: translateX(0);
     transition: transform 700ms ease-in-out;
-    right: -75px;
+    right: -75px; // Causes element to overflow container and become hidden
     width: 75px;
     &--rotate {
       transform: rotate(0deg);
@@ -569,6 +581,7 @@ ul {
 
 /* || PAGE LOAD ANIMATION */
 .container {
+  // Fixes loading animation to the entire size of the screen
   position: fixed;
   top: 0;
   right: 0;
@@ -577,10 +590,11 @@ ul {
   @include center;
   background-color: darken($white, 10%);
   opacity: 0;
-  z-index: -100;
+  z-index: -100;  // Hides animation elements behind all other page elements
   animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
   &__img {
     $img-colors: ($color-primary, $color-secondary, $color-tertiary);
+    // Create and position the 3 bouncing balls
     height: 25px;
     width: 25px;
     border-radius: 50%;
