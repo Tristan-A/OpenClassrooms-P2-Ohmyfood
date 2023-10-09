@@ -51,6 +51,14 @@ $repeat: 3;
   justify-content: center;
 }
 
+// Stretch over entirety of parent container
+@mixin cover-container {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 // Page elements expand only up to a set width and are horizontally centered
 @mixin max-page-width {
   margin: 0 auto;
@@ -62,6 +70,7 @@ $repeat: 3;
   height: $height;
   width: $width;
 }
+
 
 // media query for large screens
 @mixin screen-lg {
@@ -213,10 +222,7 @@ ul {
     &::after {
       content: "";
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      @include cover-container;
       background: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
       box-shadow: map-get($box-shadows, btn-hover);
       border-radius: 50px;
@@ -313,10 +319,7 @@ ul {
     a {
       // Covers entire card
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      @include cover-container;
       &:hover {
         cursor: pointer;  // Apply to base settings up top
       }
@@ -496,10 +499,7 @@ ul {
     &::after {
       content: "";
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      @include cover-container;
       background: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
       box-shadow: map-get($box-shadows, btn-hover);
       border-radius: 50px;
@@ -594,10 +594,7 @@ ul {
 .container {
   // Fixes loading animation to the entire size of the screen
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  @include cover-container;
   @include center;
   background-color: darken($white, 10%);
   opacity: 0;
