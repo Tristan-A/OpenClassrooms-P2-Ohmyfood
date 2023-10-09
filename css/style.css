@@ -535,13 +535,11 @@ ul {
   background-color: #e6e6e6;
   opacity: 0;
   z-index: -100;
-  animation: page-load-anim 1200ms 3;
 }
 .container__img {
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  animation: bounce-anim 1000ms 3 ease-in-out;
 }
 .container__img:not(:last-child) {
   margin-right: 25px;

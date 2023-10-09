@@ -31,6 +31,12 @@ $breakpoints: (
   lg: 992px
 );
 
+$font-weights: (
+  thin: 300,
+  norm: 400,
+  thick: 700
+);
+
 $anim-duration: 1000ms;
 $anim-delay: 200ms;
 $num-cards: 4;
@@ -160,7 +166,7 @@ ul {
 .location {
   background-color: darken($color-background, 8%);
   display: flex;
-  font-weight: 700;
+  font-weight: map-get($font-weights, thick);
   gap: 20px;
   justify-content: center;
   padding: $padding-location;
@@ -173,7 +179,7 @@ ul {
   text-align: center;
   &__paragraph {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: map-get($font-weights, thin);
     margin: 40px 10px 30px;
   }
   &__btn {
@@ -258,7 +264,7 @@ ul {
     }
   }
   &__instruction {
-    font-weight: 700;
+    font-weight: map-get($font-weights, thick);
     margin-left: 20px;  // +5px
   }
 }
@@ -375,11 +381,11 @@ ul {
   &__heading {
     font-family: $font-title;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: map-get($font-weights, norm);
   }
   &__links{
     line-height: 1.5;
-    font-weight: 300;
+    font-weight: map-get($font-weights, thin);
     a {
       color: $white;
     }
@@ -435,7 +441,7 @@ ul {
   }
   &__name {
     font-family: $font-title;
-    font-weight: 400;
+    font-weight: map-get($font-weights, norm);
     margin-right: 20px;
     @include screen-md {
       font-size: 30px;
@@ -504,7 +510,7 @@ ul {
   width: 100%; // Need this to cause text to overflow 
   &__name {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: map-get($font-weights, thin);
     margin: 15px 0;
     &::after {
       // Creates the coloured underline
@@ -591,7 +597,7 @@ ul {
   background-color: darken($white, 10%);
   opacity: 0;
   z-index: -100;  // Hides animation elements behind all other page elements
-  animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
+  //animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
   &__img {
     $img-colors: ($color-primary, $color-secondary, $color-tertiary);
     // Create and position the 3 bouncing balls
@@ -601,7 +607,7 @@ ul {
     &:not(:last-child){
       margin-right: 25px;
     }
-    animation: bounce-anim $anim-duration $repeat ease-in-out;
+    //animation: bounce-anim $anim-duration $repeat ease-in-out;
     @for $i from 1 through 3 {
       &--#{ $i } {
         background-color: nth($img-colors, $i);  
@@ -609,5 +615,4 @@ ul {
       }
     }
   }
-
 }
