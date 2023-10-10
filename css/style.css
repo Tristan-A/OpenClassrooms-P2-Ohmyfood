@@ -293,10 +293,21 @@ ul {
 
 /* || RESTAURANT IMG */
 .restaurant-img {
-  max-height: 500px;
+  max-height: 250px;
+}
+@media screen and (min-width: 576px) {
+  .restaurant-img {
+    max-height: 350px;
+  }
 }
 @media screen and (min-width: 768px) {
   .restaurant-img {
+    max-height: 450px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .restaurant-img {
+    max-height: 550px;
     margin: 0 auto;
     max-width: 1200px;
   }

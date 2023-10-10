@@ -403,15 +403,22 @@ ul {
 
 /* || RESTAURANT IMG */
 .restaurant-img {
-  max-height: 500px;  // Some imgs are taller so this keeps them about the same height across screen sizes
+  max-height: 250px;  // Some imgs are taller so this keeps them about the same height across screen sizes
+  @include screen-sm {
+    max-height: 350px;
+  }
   @include screen-md {
+    max-height: 450px;
+  }
+  @include screen-lg {
+    max-height: 550px;
     @include max-page-width;
   }
   img {
     @include img-size;
-    @include screen-lg {
-      object-position: 0 -55px;
-    }
+      @include screen-lg {
+        object-position: 0 -55px;
+      }
   }
 }
 
