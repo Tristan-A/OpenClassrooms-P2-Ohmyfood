@@ -244,21 +244,22 @@ ul {
   transition: opacity 250ms ease-out;
 }
 .restaurants__new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 30px;
   width: 80px;
   background-color: #99E2D0;
   border-radius: 3px;
   color: #1b6150;
-  display: none;
   font-size: 14px;
-  line-height: 30px;
-  position: absolute;
   right: 15px;
-  text-align: center;
+  position: absolute;
   top: 15px;
+  visibility: hidden;
 }
 .restaurants__new--on {
-  display: block;
+  visibility: visible;
 }
 
 /* || FOOTER */
