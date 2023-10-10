@@ -336,7 +336,7 @@ ul {
 }
 .menu__wrap {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap;
   padding: 40px 20px 50px 20px;
 }
 @media screen and (min-width: 768px) {
@@ -369,9 +369,9 @@ ul {
 }
 .menu__icon {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-right: 30px;
-  max-height: 100%;
   position: relative;
 }
 .menu__icon i {
@@ -405,47 +405,47 @@ ul {
   margin-top: 5px;
   width: 45px;
 }
-.course__dish {
+.course__card {
   background-color: #FFF;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   position: relative;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
+  animation: card-load-anim 1000ms ease-out backwards;
+  cursor: pointer;
   margin: 0 0 20px 0;
   overflow: hidden;
   padding: 15px;
-  animation: card-load-anim 1000ms ease-out backwards;
 }
-.course__dish:hover .course__price {
+.course__card:hover .course__price {
   margin-right: 75px;
 }
-.course__dish:hover .course__icon {
+.course__card:hover .course__icon {
   transform: translateX(-100%);
 }
-.course__dish:hover .course__icon--rotate {
+.course__card:hover .course__icon--rotate {
   transform: rotate(360deg);
 }
-.course__dish--anim1 {
+.course__card--anim1 {
   animation-delay: 200ms;
 }
-.course__dish--anim2 {
+.course__card--anim2 {
   animation-delay: 400ms;
 }
-.course__dish--anim3 {
+.course__card--anim3 {
   animation-delay: 600ms;
 }
-.course__dish--anim4 {
+.course__card--anim4 {
   animation-delay: 800ms;
 }
-.course__content {
+.course__info {
   overflow: hidden;
 }
-.course__content h3 {
+.course__info h3 {
   margin-bottom: 10px;
 }
-.course__content p {
+.course__info p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
