@@ -53,6 +53,15 @@ $repeat: 3;
   border-radius: 50px;
   box-shadow: $shadow;
 }
+
+// Sets base style for cards
+@mixin base-card-style($bg-clr) {
+  background-color: $bg-clr;
+  border-radius: 20px;
+  box-shadow: map-get($box-shadows, card);
+  position: relative;
+}
+
 // Vertical and horizontal centering
 @mixin center {
   display: flex;
@@ -237,39 +246,34 @@ ul {
     }
   }
   &__card {
-    background-color: darken($color-background, 4%);
-    border-radius: 20px;
-    box-shadow: map-get($box-shadows, card);
+    @include base-card-style(darken($color-background, 4%));
     margin: 0 0 24px 14px;
     padding: $padding-howto-card;
-    position: relative;
     &--bg-color {
       background-color: lighter($color-primary);
     }
   }
-  &__step {
+  &__num {
     @include object-size(25px, 25px);
+    @include center;
     background-color: $color-primary;
     border-radius: 50%;
     color: $white;
-    display:inline-block; // Change to block
     left: -12.5px;
-    padding-top: 5px; // Replace w/ line-height: 25px; to center
     position: absolute;
-    text-align: center;
     top: 25px;
   }
   &__icon {
     color: darken($color-background, 45%);
     margin-left: 5px;
-    width: 23px;  // Makes following text line up evenly. -3px
+    width: 20px;  // Makes following text line up evenly
     &--color {
       color: $color-primary;
     }
   }
-  &__instruction {
+  &__text {
     font-weight: map-get($font-weights, thick);
-    margin-left: 20px;  // +5px
+    margin-left: 25px;
   }
 }
 
@@ -299,10 +303,10 @@ ul {
   &__card {
     border-radius: 20px;
     box-shadow: map-get($box-shadows, card);
+    position: relative;
     display: flex;
     flex-flow: row wrap;
     overflow: hidden;
-    position: relative;
     a {
       // Covers entire card
       position: absolute;
@@ -485,13 +489,13 @@ ul {
     background-color: $color-background;
     border-radius: 20px;
     box-shadow: map-get($box-shadows, card);
+    position: relative;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     margin: 0 0 20px 0;
     overflow: hidden;
     padding: $padding-card-content;
-    position: relative;
     &:hover {
       .course__price {
         margin-right: 75px; // Keeps spacing between price and icon during transition

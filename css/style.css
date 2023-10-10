@@ -120,37 +120,37 @@ ul {
   background-color: whitesmoke;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
   margin: 0 0 24px 14px;
   padding: 30px 0 30px 25px;
-  position: relative;
 }
 .how-to__card--bg-color {
   background-color: hsl(267.3134328358, 65.6862745098%, 95%);
 }
-.how-to__step {
+.how-to__num {
   height: 25px;
   width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #9356DC;
   border-radius: 50%;
   color: #FFF;
-  display: inline-block;
   left: -12.5px;
-  padding-top: 5px;
   position: absolute;
-  text-align: center;
   top: 25px;
 }
 .how-to__icon {
   color: #8c8c8c;
   margin-left: 5px;
-  width: 23px;
+  width: 20px;
 }
 .how-to__icon--color {
   color: #9356DC;
 }
-.how-to__instruction {
+.how-to__text {
   font-weight: 700;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 /* || RESTAURANTS */
@@ -187,10 +187,10 @@ ul {
 .restaurants__card {
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
   display: flex;
   flex-flow: row wrap;
   overflow: hidden;
-  position: relative;
 }
 .restaurants__card a {
   position: absolute;
@@ -396,13 +396,13 @@ ul {
   background-color: #FFF;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   margin: 0 0 20px 0;
   overflow: hidden;
   padding: 15px;
-  position: relative;
   animation: card-load-anim 1000ms ease-out backwards;
 }
 .course__dish:hover .course__price {
