@@ -9,6 +9,7 @@ $color-tertiary: #99E2D0;
 $color-background: $white;
 $color-btn: linear-gradient(to bottom right, $color-secondary, $color-primary);
 $color-btn-hov: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
+$color-footer-bg: #353535;
 $color-new-tag: darken($color-tertiary, 50%);
 $font-text: 'Roboto', sans-serif;
 $font-title: 'Shrikhand', cursive;
@@ -375,7 +376,7 @@ ul {
 
 /* || FOOTER */
 .footer {
-  background-color: #353535;
+  background-color: $color-footer-bg;
   &__wrap {
     @include max-page-width;
     color: $white;
