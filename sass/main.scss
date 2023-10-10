@@ -166,7 +166,7 @@ $repeat: 3;
   0% {
     transform: translateY(0);
   }
-  40% {
+  30% {
     transform: translateY(-20px);
   }
   80% {
@@ -554,22 +554,22 @@ ul {
 /* || PAGE LOAD ANIMATION */
 .container {
   // Fixes loading animation to the entire size of the screen
-  position: fixed;
   @include cover-container;
   @include center;
+  animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
   background-color: darken($white, 10%);
   opacity: 0;
+  position: fixed;
   z-index: -100;  // Hides animation elements behind all other page elements
-  animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
   &__img {
     $img-colors: ($color-primary, $color-secondary, $color-tertiary);
     // Create and position the 3 bouncing balls
     @include object-size(25px, 25px);
+    animation: bounce-anim $anim-duration $repeat ease-in-out;
     border-radius: 50%;
     &:not(:last-child){
       margin-right: 25px;
     }
-    animation: bounce-anim $anim-duration $repeat ease-in-out;
     @for $i from 1 through 3 {
       &--#{ $i } {
         background-color: nth($img-colors, $i);  
