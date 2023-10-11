@@ -32,6 +32,11 @@ $box-shadows: (
   card: 0 4px 8px 0 rgba($black, 0.1)
 );
 
+$shadow-header: map-get($box-shadows, header);
+$shadow-btn: map-get($box-shadows, btn);
+$shadow-btn-hov: map-get($box-shadows, btn-hover);
+$shadow-card: map-get($box-shadows, card);
+
 $breakpoints: (
   sm: 576px,
   md: 768px,
@@ -47,7 +52,6 @@ $font-weights: (
 $fw-thin: map-get($font-weights, thin);
 $fw-reg: map-get($font-weights, reg);
 $fw-thick: map-get($font-weights, thick);
-
 
 $anim-duration: 1000ms;
 $anim-delay: 200ms;
@@ -74,7 +78,7 @@ $slide-duration: 700ms;
 @mixin base-card-style($bg-clr) {
   background-color: $bg-clr;
   border-radius: 20px;
-  box-shadow: map-get($box-shadows, card);
+  box-shadow: $shadow-card;
   position: relative;
 }
 
@@ -212,7 +216,7 @@ ul {
 
 /* || HEADER */
 .header {
-  box-shadow: map-get($box-shadows, header);
+  box-shadow: $shadow-header;
   position: relative;
   &__wrap {
     @include center;
@@ -596,7 +600,7 @@ ul {
 
 /* || BTN COMPONENT */
 .btn {
-  @include base-btn-style($color-btn, map-get($box-shadows, btn));
+  @include base-btn-style($color-btn, $shadow-btn);
   color: $white;
   padding: $padding-btn;
   position: relative;
@@ -609,7 +613,7 @@ ul {
   }
   
   &::after {
-    @include base-btn-style($color-btn-hov, map-get($box-shadows, btn-hover));
+    @include base-btn-style($color-btn-hov, $shadow-btn-hov);
     @include cover-container;
     content: "";
     opacity: 0;
