@@ -40,9 +40,14 @@ $breakpoints: (
 
 $font-weights: (
   thin: 300,
-  norm: 400,
+  reg: 400,
   thick: 700
 );
+
+$fw-thin: map-get($font-weights, thin);
+$fw-reg: map-get($font-weights, reg);
+$fw-thick: map-get($font-weights, thick);
+
 
 $anim-duration: 1000ms;
 $anim-delay: 200ms;
@@ -137,7 +142,7 @@ $slide-duration: 700ms;
 // Styling for title font
 @mixin title-font {
   font-family: $font-title;
-  font-weight: map-get($font-weights, norm);  
+  font-weight: $fw-reg;  
 }
 
 /* || FUNCTIONS */
@@ -231,7 +236,7 @@ ul {
 .location {
   background-color: darken($color-background, 8%);
   display: flex;
-  font-weight: map-get($font-weights, thick);
+  font-weight: $fw-thick;
   gap: 20px;
   justify-content: center;
   padding: $padding-location;
@@ -244,7 +249,7 @@ ul {
   text-align: center;
   &__paragraph {
     font-size: 18px;
-    font-weight: map-get($font-weights, thin);
+    font-weight: $fw-thin;
     margin: 40px 10px 30px;
   }
 }
@@ -292,7 +297,7 @@ ul {
     }
   }
   &__text {
-    font-weight: map-get($font-weights, thick);
+    font-weight: $fw-thick;
     margin-left: 25px;
   }
 }
@@ -397,7 +402,7 @@ ul {
   }
   &__links{
     line-height: 1.5;
-    font-weight: map-get($font-weights, thin);
+    font-weight: $fw-thin;
     a {
       color: $white;
     }
@@ -490,7 +495,7 @@ ul {
   width: 100%; // Need this to cause text to overflow 
   &__name {
     font-size: 18px;
-    font-weight: map-get($font-weights, thin);
+    font-weight: $fw-thin;
     margin: 15px 0;
     &::after {
       // Creates the coloured underline
