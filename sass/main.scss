@@ -450,15 +450,19 @@ ul {
   @include max-page-width;
   background-color: darken($color-background, 4%);
   border-radius: 50px 50px 0 0;
+  display: flex;
+  justify-content: center;
   margin-top: -50px;
   position: relative;
   z-index: 1; // Places menu on top of img
   &__wrap {
     display: flex;
     flex-flow: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 100%; // Stops cards from growing during animation, allowing text to overflow
     padding: $padding-section;
     @include screen-sm {
-      margin: $center;
       max-width: 70%;
     }
     @include screen-md {
@@ -469,11 +473,10 @@ ul {
     @include space-btwn;
     align-items: center;
     flex: 0 1 100%;
-    margin-bottom: 15px;
   }
   &__name {
     @include title-font;
-    margin-right: 20px;
+    margin-right: 25px;
     @include screen-md {
       font-size: 30px;
     }
@@ -504,11 +507,11 @@ ul {
 /* || COURSE */
 .course {
   flex: 0 1 100%;
-  width: 100%; // Need this to cause text to overflow 
+  width: 100%; // Stops cards from growing during animation, allowing text to overflow
   &__name {
     font-size: 18px;
     font-weight: $fw-thin;
-    margin: 15px 0;
+    margin-bottom: 15px;
     &::after {
       // Creates the coloured underline
       border: 2px solid $color-tertiary;
@@ -519,14 +522,25 @@ ul {
     }
     animation: card-load-anim $anim-duration ease-out;
   }
+  &__cards {
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+  }
   &__card {
     @include base-card-style($color-background);
     @include space-btwn;
     animation: card-load-anim $anim-duration ease-out backwards;
     cursor: pointer;
-    margin: 0 0 20px 0;
+    flex: 0 1 100%;
     overflow: hidden; // Hides overflowing checkmark icon
     padding: $padding-card-content;
+    // Creates classes for delaying each cards load time
+    @for $i from 1 through $num-cards {
+      &--anim#{ $i } {
+      animation-delay: $anim-delay * $i; // delays each card's animation by a multiple of the anim-delay
+      }
+    }
     &:hover {
       .course__price {
         margin-right: $slide-width; // Moves over the same width of icon container
@@ -536,12 +550,6 @@ ul {
         &--rotate {
           transform: rotate(360deg);
         }
-      }
-    }
-    // Creates classes for delaying each cards load time
-    @for $i from 1 through $num-cards {
-      &--anim#{ $i } {
-      animation-delay: $anim-delay * $i; // delays each card's animation by a multiple of the anim-delay
       }
     }
   }
@@ -614,7 +622,7 @@ ul {
 
   // Styling for menu page button
   &--menu-pg {
-    margin: 20px auto 0;  // Horizontally centers
+  //  margin: $center;  // Horizontally centers
     width: 175px;
   }
   

@@ -335,6 +335,8 @@ ul {
   max-width: 1200px;
   background-color: whitesmoke;
   border-radius: 50px 50px 0 0;
+  display: flex;
+  justify-content: center;
   margin-top: -50px;
   position: relative;
   z-index: 1;
@@ -342,11 +344,13 @@ ul {
 .menu__wrap {
   display: flex;
   flex-flow: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 100%;
   padding: 40px 20px 50px 20px;
 }
 @media screen and (min-width: 576px) {
   .menu__wrap {
-    margin: 0 auto;
     max-width: 70%;
   }
 }
@@ -360,12 +364,11 @@ ul {
   justify-content: space-between;
   align-items: center;
   flex: 0 1 100%;
-  margin-bottom: 15px;
 }
 .menu__name {
   font-family: "Shrikhand", cursive;
   font-weight: 400;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 @media screen and (min-width: 768px) {
   .menu__name {
@@ -405,7 +408,7 @@ ul {
 .course__name {
   font-size: 18px;
   font-weight: 300;
-  margin: 15px 0;
+  margin-bottom: 15px;
   animation: card-load-anim 1000ms ease-out;
 }
 .course__name::after {
@@ -414,6 +417,11 @@ ul {
   display: block;
   margin-top: 5px;
   width: 45px;
+}
+.course__cards {
+  display: flex;
+  flex-flow: wrap;
+  gap: 20px;
 }
 .course__card {
   background-color: #FFF;
@@ -424,18 +432,9 @@ ul {
   justify-content: space-between;
   animation: card-load-anim 1000ms ease-out backwards;
   cursor: pointer;
-  margin: 0 0 20px 0;
+  flex: 0 1 100%;
   overflow: hidden;
   padding: 15px;
-}
-.course__card:hover .course__price {
-  margin-right: 75px;
-}
-.course__card:hover .course__icon {
-  transform: translateX(-100%);
-}
-.course__card:hover .course__icon--rotate {
-  transform: rotate(360deg);
 }
 .course__card--anim1 {
   animation-delay: 200ms;
@@ -448,6 +447,15 @@ ul {
 }
 .course__card--anim4 {
   animation-delay: 800ms;
+}
+.course__card:hover .course__price {
+  margin-right: 75px;
+}
+.course__card:hover .course__icon {
+  transform: translateX(-100%);
+}
+.course__card:hover .course__icon--rotate {
+  transform: rotate(360deg);
 }
 .course__info {
   overflow: hidden;
@@ -530,7 +538,6 @@ ul {
   z-index: 1;
 }
 .btn--menu-pg {
-  margin: 20px auto 0;
   width: 175px;
 }
 .btn::after {
