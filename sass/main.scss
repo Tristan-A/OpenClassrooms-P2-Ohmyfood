@@ -576,6 +576,7 @@ ul {
   @include center;
   animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
   background-color: darken($white, 10%);
+  gap: 25px;  // Puts space between each ball
   opacity: 0;
   position: fixed;
   z-index: -100;  // Hides animation elements behind all other page elements
@@ -585,9 +586,6 @@ ul {
     @include object-size(25px, 25px);
     animation: bounce-anim $anim-duration $repeat ease-in-out;
     border-radius: $circle-border;
-    &:not(:last-child){
-      margin-right: 25px;
-    }
     @for $i from 1 through 3 {
       &--#{ $i } {
         background-color: nth($img-colors, $i);  
