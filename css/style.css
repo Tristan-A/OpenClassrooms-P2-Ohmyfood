@@ -101,18 +101,22 @@ ul {
 /* || HOW-TO */
 .how-to {
   background-color: #FFF;
+  display: flex;
+  justify-content: center;
 }
 .how-to__wrap {
+  display: flex;
+  flex-flow: wrap;
+  gap: 25px;
   padding: 40px 20px 50px 20px;
 }
 @media screen and (min-width: 576px) {
   .how-to__wrap {
-    margin: 0 auto;
     max-width: 425px;
   }
 }
 .how-to__heading {
-  margin-bottom: 25px;
+  flex: 0 1 100%;
 }
 @media screen and (min-width: 576px) {
   .how-to__heading {
@@ -124,8 +128,9 @@ ul {
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   position: relative;
-  margin: 0 0 24px 14px;
+  margin-left: 14px;
   padding: 30px 0 30px 25px;
+  flex: 0 1 100%;
 }
 .how-to__card--bg-color {
   background-color: hsl(267.3134328358, 65.6862745098%, 95%);

@@ -261,23 +261,28 @@ ul {
 /* || HOW-TO */
 .how-to {
   background-color: $white;
+  display: flex;
+  justify-content: center;
   &__wrap {
+    display: flex;
+    flex-flow: wrap;
+    gap: 25px;
     padding: $padding-section;
     @include screen-sm {
-      margin: $center;
       max-width: 425px;
     }
   }
   &__heading {
-    margin-bottom: 25px;
+    flex: 0 1 100%;
     @include screen-sm {
       text-align: center;
     }
   }
   &__card {
     @include base-card-style(darken($color-background, 4%));
-    margin: 0 0 24px 14px;
+    margin-left: 14px;
     padding: $padding-howto-card;
+    flex: 0 1 100%;
     &--bg-color {
       background-color: lighter($color-primary);
     }
