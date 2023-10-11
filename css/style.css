@@ -339,10 +339,15 @@ ul {
   flex-flow: wrap;
   padding: 40px 20px 50px 20px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
   .menu__wrap {
     margin: 0 auto;
-    max-width: 66%;
+    max-width: 70%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu__wrap {
+    max-width: 65%;
   }
 }
 .menu__heading {

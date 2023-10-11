@@ -452,9 +452,12 @@ ul {
     display: flex;
     flex-flow: wrap;
     padding: $padding-section;
-    @include screen-md {
+    @include screen-sm {
       margin: $center;
-      max-width: 66%;
+      max-width: 70%;
+    }
+    @include screen-md {
+      max-width: 65%;
     }
   }
   &__heading {
