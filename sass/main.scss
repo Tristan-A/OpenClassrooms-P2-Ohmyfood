@@ -3,24 +3,24 @@
 /* || VARIABLES */
 $white: #FFF;
 $black: #000;
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$color-background: $white;
-$color-btn: linear-gradient(to bottom right, $color-secondary, $color-primary);
-$color-btn-hov: linear-gradient(to bottom right, lighten($color-secondary, 2%), lighten($color-primary, 2%));
-$color-footer-bg: #353535;
-$color-new-tag: darken($color-tertiary, 50%);
-$font-text: 'Roboto', sans-serif;
-$font-title: 'Shrikhand', cursive;
-$padding-header: 20px 0 15px 0;
-$padding-location: 15px 0;
-$padding-section: 40px 20px 50px 20px;
-$padding-footer: 20px;
-$padding-btn: 16px 26px;
-$padding-card-content: 15px;
-$padding-howto-card: 30px 0 30px 25px;
-$max-width-site: 1200px;
+$primary-clr: #9356DC;
+$secondary-clr: #FF79DA;
+$tertiary-clr: #99E2D0;
+$btn-clr: linear-gradient(to bottom right, $secondary-clr, $primary-clr);
+$btn-hov-clr: linear-gradient(to bottom right, lighten($secondary-clr, 2%), lighten($primary-clr, 2%));
+$new-tag-clr: darken($tertiary-clr, 50%);
+$general-bg-clr: $white;
+$footer-bg-clr: #353535;
+$text-font: 'Roboto', sans-serif;
+$title-font: 'Shrikhand', cursive;
+$header-pad: 20px 0 15px 0;
+$location-pad: 15px 0;
+$section-pad: 40px 20px 50px 20px;
+$footer-pad: 20px;
+$btn-pad: 16px 26px;
+$card-content-pad: 15px;
+$howto-card-pad: 30px 0 30px 25px;
+$site-max-width: 1200px;
 $circle-border: 50%;
 $center: 0 auto;
 $slide-width: 75px;
@@ -32,10 +32,10 @@ $box-shadows: (
   card: 0 4px 8px 0 rgba($black, 0.1)
 );
 
-$shadow-header: map-get($box-shadows, header);
-$shadow-btn: map-get($box-shadows, btn);
-$shadow-btn-hov: map-get($box-shadows, btn-hover);
-$shadow-card: map-get($box-shadows, card);
+$header-shadow: map-get($box-shadows, header);
+$btn-shadow: map-get($box-shadows, btn);
+$btn-hov-shadow: map-get($box-shadows, btn-hover);
+$card-shadow: map-get($box-shadows, card);
 
 $breakpoints: (
   sm: 576px,
@@ -78,7 +78,7 @@ $slide-duration: 700ms;
 @mixin base-card-style($bg-clr) {
   background-color: $bg-clr;
   border-radius: 20px;
-  box-shadow: $shadow-card;
+  box-shadow: $card-shadow;
   position: relative;
 }
 
@@ -107,7 +107,7 @@ $slide-duration: 700ms;
 // Page elements expand only up to a set width and are horizontally centered
 @mixin max-page-width {
   margin: $center;
-  max-width: $max-width-site;
+  max-width: $site-max-width;
 }
 
 // Set the size of an object
@@ -145,7 +145,7 @@ $slide-duration: 700ms;
 
 // Styling for title font
 @mixin title-font {
-  font-family: $font-title;
+  font-family: $title-font;
   font-weight: $fw-reg;  
 }
 
@@ -199,7 +199,7 @@ $slide-duration: 700ms;
 }
 
 body {
-  font-family: $font-text;
+  font-family: $text-font;
 }
 
 a {
@@ -216,13 +216,13 @@ ul {
 
 /* || HEADER */
 .header {
-  box-shadow: $shadow-header;
+  box-shadow: $header-shadow;
   position: relative;
   &__wrap {
     @include center;
     @include max-page-width;
     height: 65px;  // Fixed header height
-    padding: $padding-header;
+    padding: $header-pad;
     position: relative;
   }
   &__back {
@@ -238,18 +238,18 @@ ul {
 
 /* || LOCATION */
 .location {
-  background-color: darken($color-background, 8%);
+  background-color: darken($general-bg-clr, 8%);
   display: flex;
   font-weight: $fw-thick;
   gap: 20px;
   justify-content: center;
-  padding: $padding-location;
+  padding: $location-pad;
 }
 
 /* || INTRO */
 .intro {
-  background-color: darken($color-background, 4%);
-  padding: $padding-section;
+  background-color: darken($general-bg-clr, 4%);
+  padding: $section-pad;
   text-align: center;
   &__paragraph {
     font-size: 18px;
@@ -267,7 +267,7 @@ ul {
     display: flex;
     flex-flow: wrap;
     gap: 25px;
-    padding: $padding-section;
+    padding: $section-pad;
     @include screen-sm {
       max-width: 425px;
     }
@@ -279,18 +279,18 @@ ul {
     }
   }
   &__card {
-    @include base-card-style(darken($color-background, 4%));
+    @include base-card-style(darken($general-bg-clr, 4%));
     margin-left: 14px;
-    padding: $padding-howto-card;
+    padding: $howto-card-pad;
     flex: 0 1 100%;
     &--bg-color {
-      background-color: lighter($color-primary);
+      background-color: lighter($primary-clr);
     }
   }
   &__num {
     @include object-size(25px, 25px);
     @include center;
-    background-color: $color-primary;
+    background-color: $primary-clr;
     border-radius: $circle-border;
     color: $white;
     left: -12.5px;
@@ -298,11 +298,11 @@ ul {
     top: 25px;
   }
   &__icon {
-    color: darken($color-background, 45%);
+    color: darken($general-bg-clr, 45%);
     margin-left: 5px;
     width: 20px;  // Makes following text line up evenly
     &--color {
-      color: $color-primary;
+      color: $primary-clr;
     }
   }
   &__text {
@@ -313,14 +313,14 @@ ul {
 
 /* || RESTAURANTS */
 .restaurants {
-  background-color: darken($color-background, 4%);
+  background-color: darken($general-bg-clr, 4%);
   &__wrap {
     @include max-page-width;
     display: grid;
     gap: 25px;
     grid-auto-rows: 1fr;
     grid-template: minmax(1px, auto) / 1fr;
-    padding: $padding-section;
+    padding: $section-pad;
     @include screen-md {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -335,7 +335,7 @@ ul {
     }
   }
   &__card {
-    @include base-card-style($color-background);
+    @include base-card-style($general-bg-clr);
     display: flex;
     flex-flow: wrap;
     overflow: hidden;
@@ -357,7 +357,7 @@ ul {
     @include space-btwn;
     align-items: center;
     flex: 0 1 100%;
-    padding: $padding-card-content;
+    padding: $card-content-pad;
     h3 {
       margin-bottom: 10px;
     }
@@ -375,7 +375,7 @@ ul {
     }
     // Heart icon fills on hover
     &--anim {
-      color: $color-secondary;
+      color: $secondary-clr;
       opacity: 0;
       transition: opacity $clr-change-dur ease-out;
     }
@@ -383,9 +383,9 @@ ul {
   &__new {
     @include center;
     @include object-size(30px, 80px);
-    background-color: $color-tertiary;
+    background-color: $tertiary-clr;
     border-radius: 3px;
-    color: $color-new-tag;
+    color: $new-tag-clr;
     font-size: 14px;
     right: 15px;
     position: absolute;
@@ -399,11 +399,11 @@ ul {
 
 /* || FOOTER */
 .footer {
-  background-color: $color-footer-bg;
+  background-color: $footer-bg-clr;
   &__wrap {
     @include max-page-width;
     color: $white;
-    padding: $padding-footer;
+    padding: $footer-pad;
   }
   &__heading {
     @include title-font;
@@ -448,7 +448,7 @@ ul {
 /* || MENU */
 .menu {
   @include max-page-width;
-  background-color: darken($color-background, 4%);
+  background-color: darken($general-bg-clr, 4%);
   border-radius: 50px 50px 0 0;
   display: flex;
   justify-content: center;
@@ -461,7 +461,7 @@ ul {
     justify-content: center;
     gap: 30px;
     max-width: 100%; // Stops cards from growing during animation, allowing text to overflow
-    padding: $padding-section;
+    padding: $section-pad;
     @include screen-sm {
       max-width: 70%;
     }
@@ -497,7 +497,7 @@ ul {
     }
     // Heart icon fills on hover
     &--anim {
-      color: $color-secondary;
+      color: $secondary-clr;
       opacity: 0;
       transition: opacity $clr-change-dur ease-out;
     }
@@ -514,7 +514,7 @@ ul {
     margin-bottom: 15px;
     &::after {
       // Creates the coloured underline
-      border: 2px solid $color-tertiary;
+      border: 2px solid $tertiary-clr;
       content: "";
       display: block;
       margin-top: 5px;
@@ -528,13 +528,13 @@ ul {
     gap: 20px;
   }
   &__card {
-    @include base-card-style($color-background);
+    @include base-card-style($general-bg-clr);
     @include space-btwn;
     animation: card-load-anim $anim-duration ease-out backwards;
     cursor: pointer;
     flex: 0 1 100%;
     overflow: hidden; // Hides overflowing checkmark icon
-    padding: $padding-card-content;
+    padding: $card-content-pad;
     // Creates classes for delaying each cards load time
     @for $i from 1 through $num-cards {
       &--anim#{ $i } {
@@ -571,7 +571,7 @@ ul {
   &__icon {
     @include center;
     @include object-size(100%, $slide-width);
-    background-color: $color-tertiary;
+    background-color: $tertiary-clr;
     color: $white;
     position: absolute;
     top: 0;
@@ -597,7 +597,7 @@ ul {
   position: fixed;
   z-index: -100;  // Hides animation elements behind all other page elements
   &__img {
-    $img-colors: ($color-primary, $color-secondary, $color-tertiary);
+    $img-colors: ($primary-clr, $secondary-clr, $tertiary-clr);
     // Create and position the 3 bouncing balls
     @include object-size(25px, 25px);
     animation: bounce-anim $anim-duration $repeat ease-in-out;
@@ -614,9 +614,9 @@ ul {
 
 /* || BTN COMPONENT */
 .btn {
-  @include base-btn-style($color-btn, $shadow-btn);
+  @include base-btn-style($btn-clr, $btn-shadow);
   color: $white;
-  padding: $padding-btn;
+  padding: $btn-pad;
   position: relative;
   z-index: 1;
 
@@ -627,7 +627,7 @@ ul {
   }
   
   &::after {
-    @include base-btn-style($color-btn-hov, $shadow-btn-hov);
+    @include base-btn-style($btn-hov-clr, $btn-hov-shadow);
     @include cover-container;
     content: "";
     opacity: 0;
