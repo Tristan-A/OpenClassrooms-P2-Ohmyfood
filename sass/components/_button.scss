@@ -1,0 +1,31 @@
+.btn {
+  
+  @include base-btn-style($btn-clr, $btn-shadow);
+  color: $white;
+  padding: 16px 26px;
+  position: relative;
+  z-index: 1;
+
+  // Styling for menu page button
+  &--menu-pg {
+    width: 175px;
+  }
+  
+  &::after {
+    @include base-btn-style($btn-hov-clr, $btn-hov-shadow);
+    @include cover-container;
+    content: "";
+    opacity: 0;
+    position: absolute;
+    transition: opacity $clr-change-dur ease-out;
+    z-index: -1;  // Keeps pseudo element behind button text
+  }
+
+  &:hover {
+    cursor: pointer;
+    
+    &::after {
+      opacity: 1;
+    }
+  }
+}

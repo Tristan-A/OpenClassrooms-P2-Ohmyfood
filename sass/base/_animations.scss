@@ -1,0 +1,32 @@
+@keyframes card-load-anim {
+  from {
+    opacity: 0; // card starts transparent
+    transform: translateY($card-offset); // vertically offsets cards' starting position
+  }
+
+  to {
+    opacity: 1; // card is completely visible
+    transform: translateY($card-end-pos); // card is in final position with no offset
+  }
+}
+
+@keyframes page-load-anim {
+  0%, 100%{
+    opacity: 1; // makes loading animation visible
+    z-index: 1000; // places loading animation in front of all elements
+  }
+}
+
+@keyframes bounce-anim {
+  0% {
+    transform: translateY($ball-start-pos);
+  }
+
+  30% {
+    transform: translateY($bounce-height);
+  }
+  
+  80% {
+    transform: translateY($ball-start-pos);
+  }
+}

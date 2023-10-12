@@ -1,0 +1,9 @@
+// Makes given colour lighter
+@function lighter($color) {
+  $hue: hue($color);
+  $sat: saturation($color);
+  $light: 95%;
+  $lighter: hsl($hue, $sat, $light);
+  
+  @return $lighter;
+}

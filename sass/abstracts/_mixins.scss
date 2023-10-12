@@ -1,0 +1,88 @@
+// Sets base style for btns
+@mixin base-btn-style($bg-clr, $shadow) {
+  background: $bg-clr;
+  border: none;
+  border-radius: 50px;
+  box-shadow: $shadow;
+}
+
+// Sets base style for cards
+@mixin base-card-style($bg-clr) {
+  background-color: $bg-clr;
+  border-radius: 20px;
+  box-shadow: $card-shadow;
+  position: relative;
+}
+
+// Vertical and horizontal centering with flex
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Stretch over entirety of parent container
+@mixin cover-container {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// Horizontally center with flex
+@mixin horizontal-cntr {
+  display: flex;
+  justify-content: center;
+}
+
+// Img will keep aspect ratio and fill width of container
+@mixin img-size {
+  @include object-size(100%, 100%);
+  object-fit: cover;
+  object-position: center;
+}
+
+// Page elements expand only up to a set width and are horizontally centered
+@mixin max-page-width {
+  margin: $center;
+  max-width: $site-max-width;
+}
+
+// Set the size of an object
+@mixin object-size($height: auto, $width: auto) {
+  height: $height;
+  width: $width;
+}
+
+// media query for large screens
+@mixin screen-lg {
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+// media query for medium screens
+@mixin screen-md {
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+// media query for small screens
+@mixin screen-sm {
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+// Put two elements on opposite sides of the container
+@mixin space-btwn {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Styling for title font
+@mixin title-font {
+  font-family: $title-font;
+  font-weight: $fw-reg;  
+}

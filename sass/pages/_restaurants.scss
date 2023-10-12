@@ -1,0 +1,194 @@
+/* || RESTAURANT IMG 
+ ******************************/
+
+.restaurant-img {
+  max-height: 250px;  // Some imgs are taller so this keeps them about the same height across screen sizes
+  
+  @include screen-sm {
+    max-height: 350px;
+  }
+
+  @include screen-md {
+    max-height: 450px;
+  }
+
+  @include screen-lg {
+    max-height: 550px;
+    @include max-page-width;
+  }
+  
+  img {
+    @include img-size;
+
+    @include screen-lg {
+      object-position: 0 -55px;
+    }
+  }
+}
+
+/* || MENU 
+ ******************************/
+
+.menu {
+  @include horizontal-cntr;
+  @include max-page-width;
+  background-color: $general-bg-clr;
+  border-radius: 50px 50px 0 0;
+  margin-top: -50px;
+  position: relative;
+  z-index: 1; // Places menu on top of img
+
+  &__wrap {
+    @include horizontal-cntr;
+    flex-flow: wrap;
+    gap: 30px;
+    max-width: 100%; // Stops cards from growing during animation, allowing text to overflow
+    padding: $section-pad;
+
+    @include screen-sm {
+      max-width: 70%;
+    }
+
+    @include screen-md {
+      max-width: 65%;
+    }
+  }
+
+  &__heading {
+    @include space-btwn;
+    align-items: center;
+    flex: 0 1 100%;
+  }
+
+  &__name {
+    @include title-font;
+    margin-right: 25px;
+
+    @include screen-md {
+      font-size: 30px;
+    }
+
+    @include screen-lg {
+      font-size: 34px;
+    }
+  }
+
+  &__icon {
+    @include center;
+    margin-right: 30px;
+    position: relative;
+
+    i {
+      position: absolute;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+
+    // Heart icon fills on hover
+    &--anim {
+      color: $secondary-clr;
+      opacity: 0;
+      transition: opacity $clr-change-dur ease-out;
+    }
+  }
+}
+
+/* || COURSE 
+ ******************************/
+
+.course {
+  flex: 0 1 100%;
+  width: 100%; // Stops cards from growing during animation, allowing text to overflow
+
+  &__name {
+    font-size: 18px;
+    font-weight: $fw-thin;
+    margin-bottom: 15px;
+
+    &::after {
+      // Creates the coloured underline
+      border: 2px solid $tertiary-clr;
+      content: "";
+      display: block;
+      margin-top: 5px;
+      width: 45px;
+    }
+    animation: card-load-anim $anim-duration ease-out;
+  }
+
+  &__cards {
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+  }
+
+  &__card {
+    @include base-card-style($white);
+    @include space-btwn;
+    animation: card-load-anim $anim-duration ease-out backwards;
+    cursor: pointer;
+    flex: 0 1 100%;
+    overflow: hidden; // Hides overflowing checkmark icon
+    padding: $card-content-pad;
+
+    // Creates classes for delaying each cards load time
+    @for $i from 1 through $num-cards {
+      &--anim#{ $i } {
+      animation-delay: $anim-delay * $i; // delays each card's animation by a multiple of the anim-delay
+      }
+    }
+
+    &:hover {
+      .course__price {
+        margin-right: $slide-width; // Moves over the same width of icon container
+      }
+
+      .course__icon {
+        transform: translateX(-100%); // Slides entire icon element into view
+
+        &--rotate {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  &__info {
+    overflow: hidden; // Need for text-overflow to work
+    
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      overflow: hidden; // Need for text-overflow to work
+      text-overflow: ellipsis;
+      white-space: nowrap;  // Text won't wrap and can overflow
+    }
+  }
+
+  &__price {
+    align-self: flex-end; // Places price at bottom of element
+    transition: margin $slide-duration ease-in-out;
+  }
+
+  &__icon {
+    @include center;
+    @include object-size(100%, $slide-width);
+    background-color: $tertiary-clr;
+    color: $white;
+    position: absolute;
+    top: 0;
+    transform: translateX(0);
+    transition: transform $slide-duration ease-in-out;
+    right: -$slide-width; // Causes element to overflow container and become hidden
+
+    &--rotate {
+      transform: rotate(0deg);
+      transition: transform $slide-duration ease-in-out;
+    }
+  }
+}

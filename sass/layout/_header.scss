@@ -1,0 +1,23 @@
+.header {
+  box-shadow: $header-shadow;
+  position: relative;
+
+  &__wrap {
+    @include center;
+    @include max-page-width;
+    height: 65px;  // Fixed header height
+    padding: 20px 0 15px;
+    position: relative;
+  }
+
+  &__back {
+    color: $black;
+    left: 20px;
+    position: absolute;
+  }
+
+  &__logo {
+    max-height: 100%;  // Prevents logo from overflowing its container
+    max-width: 45%;
+  }
+}

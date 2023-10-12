@@ -1,0 +1,31 @@
+.footer {
+  background-color: #353535;
+
+  &__wrap {
+    @include max-page-width;
+    color: $white;
+    padding: 20px;
+  }
+
+  &__heading {
+    @include title-font;
+    font-size: 18px;
+  }
+
+  &__links{
+    line-height: 1.5;
+    font-weight: $fw-thin;
+
+    a {
+      color: $white;
+    }
+
+    i {
+      width: 15px;  // Lines up following text evenly
+    }
+    
+    span {
+      margin-left: 5px;
+    }
+  }
+}

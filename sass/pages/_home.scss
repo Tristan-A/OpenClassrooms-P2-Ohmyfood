@@ -1,0 +1,223 @@
+/* || LOCATION 
+ ******************************/
+
+.location {
+  @include horizontal-cntr;
+  background-color: darken($white, 8%);
+  font-weight: $fw-thick;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+/* || INTRO
+ ******************************/
+
+.intro {
+  background-color: $general-bg-clr;
+  padding: $section-pad;
+  text-align: center;
+
+  &__paragraph {
+    font-size: 18px;
+    font-weight: $fw-thin;
+    margin: 40px 10px 30px;
+  }
+}
+
+/* || HOW-TO 
+ ******************************/
+
+.how-to {
+  @include horizontal-cntr;
+  background-color: $white;
+
+  &__wrap {
+    display: flex;
+    flex-flow: wrap;
+    gap: 25px;
+    padding: $section-pad;
+    @include screen-sm {
+      max-width: 425px;
+    }
+  }
+
+  &__heading {
+    flex: 0 1 100%;
+    @include screen-sm {
+      text-align: center;
+    }
+  }
+
+  &__card {
+    @include base-card-style($general-bg-clr);
+    margin-left: 14px;
+    padding: 30px 0 30px 25px;
+    flex: 0 1 100%;
+
+    &--bg-color {
+      background-color: lighter($primary-clr);
+    }
+  }
+
+  &__num {
+    @include center;
+    @include object-size(25px, 25px);
+    background-color: $primary-clr;
+    border-radius: $circle-border;
+    color: $white;
+    left: -12.5px;
+    position: absolute;
+    top: 25px;
+  }
+
+  &__icon {
+    color: darken($white, 45%);
+    margin-left: 5px;
+    width: 20px;  // Makes following text line up evenly
+
+    &--color {
+      color: $primary-clr;
+    }
+  }
+
+  &__text {
+    font-weight: $fw-thick;
+    margin-left: 25px;
+  }
+}
+
+/* || RESTAURANTS
+ ******************************/
+
+.restaurants {
+  background-color: $general-bg-clr;
+  &__wrap {
+    @include max-page-width;
+    display: grid;
+    gap: 25px;
+    grid-auto-rows: 1fr;
+    grid-template: minmax(1px, auto) / 1fr;
+    padding: $section-pad;
+
+    @include screen-md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include screen-lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__heading {
+    grid-column: 1 / -1;
+
+    @include screen-sm {
+      text-align: center;
+    }
+  }
+
+  &__card {
+    @include base-card-style($white);
+    display: flex;
+    flex-flow: wrap;
+    overflow: hidden;
+
+    a {
+      // Covers entire card
+      @include cover-container;
+      position: absolute;
+    }
+  }
+
+  &__img-wrap {
+    aspect-ratio: 16/9;
+    flex: 0 1 100%;
+    overflow: hidden;
+
+    img {
+      @include img-size;
+    }
+  }
+
+  &__info {
+    @include space-btwn;
+    align-items: center;
+    flex: 0 1 100%;
+    padding: $card-content-pad;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__icon {
+    @include center;
+    margin-right: 20px;
+    position: relative;
+
+    i {
+      position: absolute;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+
+    // Heart icon fills on hover
+    &--anim {
+      color: $secondary-clr;
+      opacity: 0;
+      transition: opacity $clr-change-dur ease-out;
+    }
+  }
+
+  &__new {
+    @include center;
+    @include object-size(30px, 80px);
+    background-color: $tertiary-clr;
+    border-radius: 3px;
+    color: darken($tertiary-clr, 50%);
+    font-size: 14px;
+    right: 15px;
+    position: absolute;
+    top: 15px;
+    visibility: hidden;
+    
+    &--on {
+      visibility: visible;
+    }
+  }
+}
+
+/* || LOADING PAGE ANIMATION 
+ ******************************/
+ 
+ .container {
+  // Fixes loading animation to the entire size of the screen
+  @include center;
+  @include cover-container;
+  animation: page-load-anim ($anim-duration + $anim-delay) $repeat;
+  background-color: darken($white, 10%);
+  gap: 25px;  // Puts space between each ball
+  opacity: 0;
+  position: fixed;
+  z-index: -100;  // Hides animation elements behind all other page elements
+
+  &__img {
+    $img-colors: ($primary-clr, $secondary-clr, $tertiary-clr);
+    $num-balls: 3;
+    
+    // Create and position the 3 bouncing balls
+    @include object-size(25px, 25px);
+    animation: bounce-anim $anim-duration $repeat ease-in-out;
+    border-radius: $circle-border;
+
+    @for $i from 1 through $num-balls {
+      &--#{ $i } {
+        background-color: nth($img-colors, $i);  
+        animation-delay: $anim-delay * $i;      
+      }
+    }
+  }
+}
