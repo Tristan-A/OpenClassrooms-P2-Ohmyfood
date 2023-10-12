@@ -62,7 +62,7 @@ $slide-duration: 700ms;
   position: relative;
 }
 
-// Vertical and horizontal centering
+// Vertical and horizontal centering with flex
 @mixin center {
   display: flex;
   align-items: center;
@@ -75,6 +75,12 @@ $slide-duration: 700ms;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+// Horizontally center with flex
+@mixin horizontal-cntr {
+  display: flex;
+  justify-content: center;
 }
 
 // Img will keep aspect ratio and fill width of container
@@ -218,11 +224,10 @@ ul {
 
 /* || LOCATION */
 .location {
+  @include horizontal-cntr;
   background-color: darken($white, 8%);
-  display: flex;
   font-weight: $fw-thick;
   gap: 20px;
-  justify-content: center;
   padding: 15px 0;
 }
 
@@ -240,9 +245,8 @@ ul {
 
 /* || HOW-TO */
 .how-to {
+  @include horizontal-cntr;
   background-color: $white;
-  display: flex;
-  justify-content: center;
   &__wrap {
     display: flex;
     flex-flow: wrap;
@@ -427,18 +431,16 @@ ul {
 
 /* || MENU */
 .menu {
+  @include horizontal-cntr;
   @include max-page-width;
   background-color: $general-bg-clr;
   border-radius: 50px 50px 0 0;
-  display: flex;
-  justify-content: center;
   margin-top: -50px;
   position: relative;
   z-index: 1; // Places menu on top of img
   &__wrap {
-    display: flex;
+    @include horizontal-cntr;
     flex-flow: wrap;
-    justify-content: center;
     gap: 30px;
     max-width: 100%; // Stops cards from growing during animation, allowing text to overflow
     padding: $section-pad;

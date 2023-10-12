@@ -78,11 +78,11 @@ ul {
 
 /* || LOCATION */
 .location {
-  background-color: #ebebeb;
   display: flex;
+  justify-content: center;
+  background-color: #ebebeb;
   font-weight: 700;
   gap: 20px;
-  justify-content: center;
   padding: 15px 0;
 }
 
@@ -100,9 +100,9 @@ ul {
 
 /* || HOW-TO */
 .how-to {
-  background-color: #FFF;
   display: flex;
   justify-content: center;
+  background-color: #FFF;
 }
 .how-to__wrap {
   display: flex;
@@ -331,20 +331,20 @@ ul {
 
 /* || MENU */
 .menu {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   max-width: 1200px;
   background-color: whitesmoke;
   border-radius: 50px 50px 0 0;
-  display: flex;
-  justify-content: center;
   margin-top: -50px;
   position: relative;
   z-index: 1;
 }
 .menu__wrap {
   display: flex;
-  flex-flow: wrap;
   justify-content: center;
+  flex-flow: wrap;
   gap: 30px;
   max-width: 100%;
   padding: 40px 20px 50px 20px;
