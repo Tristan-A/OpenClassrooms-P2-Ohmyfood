@@ -8,34 +8,20 @@ $secondary-clr: #FF79DA;
 $tertiary-clr: #99E2D0;
 $btn-clr: linear-gradient(to bottom right, $secondary-clr, $primary-clr);
 $btn-hov-clr: linear-gradient(to bottom right, lighten($secondary-clr, 2%), lighten($primary-clr, 2%));
-$new-tag-clr: darken($tertiary-clr, 50%);
-$general-bg-clr: $white;
-$footer-bg-clr: #353535;
+$general-bg-clr: darken($white, 4%);;
 $text-font: 'Roboto', sans-serif;
 $title-font: 'Shrikhand', cursive;
-$header-pad: 20px 0 15px 0;
-$location-pad: 15px 0;
 $section-pad: 40px 20px 50px 20px;
-$footer-pad: 20px;
-$btn-pad: 16px 26px;
 $card-content-pad: 15px;
-$howto-card-pad: 30px 0 30px 25px;
 $site-max-width: 1200px;
 $circle-border: 50%;
 $center: 0 auto;
 $slide-width: 75px;
 
-$box-shadows: (
-  header: 0 0 3px 3px rgba($black, 0.1),
-  btn: 0 4px 8px 0 rgba($black, 0.3),
-  btn-hover: 0 4px 8px 0 rgba($black, 0.4),
-  card: 0 4px 8px 0 rgba($black, 0.1)
-);
-
-$header-shadow: map-get($box-shadows, header);
-$btn-shadow: map-get($box-shadows, btn);
-$btn-hov-shadow: map-get($box-shadows, btn-hover);
-$card-shadow: map-get($box-shadows, card);
+$header-shadow: 0 0 3px 3px rgba($black, 0.1);
+$btn-shadow: 0 4px 8px 0 rgba($black, 0.3);
+$btn-hov-shadow: 0 4px 8px 0 rgba($black, 0.4);
+$card-shadow: 0 4px 8px 0 rgba($black, 0.1);
 
 $breakpoints: (
   sm: 576px,
@@ -43,15 +29,9 @@ $breakpoints: (
   lg: 992px
 );
 
-$font-weights: (
-  thin: 300,
-  reg: 400,
-  thick: 700
-);
-
-$fw-thin: map-get($font-weights, thin);
-$fw-reg: map-get($font-weights, reg);
-$fw-thick: map-get($font-weights, thick);
+$fw-thin: 300;
+$fw-reg: 400;
+$fw-thick: 700;
 
 $anim-duration: 1000ms;
 $anim-delay: 200ms;
@@ -222,7 +202,7 @@ ul {
     @include center;
     @include max-page-width;
     height: 65px;  // Fixed header height
-    padding: $header-pad;
+    padding: 20px 0 15px;
     position: relative;
   }
   &__back {
@@ -238,17 +218,17 @@ ul {
 
 /* || LOCATION */
 .location {
-  background-color: darken($general-bg-clr, 8%);
+  background-color: darken($white, 8%);
   display: flex;
   font-weight: $fw-thick;
   gap: 20px;
   justify-content: center;
-  padding: $location-pad;
+  padding: 15px 0;
 }
 
 /* || INTRO */
 .intro {
-  background-color: darken($general-bg-clr, 4%);
+  background-color: $general-bg-clr;
   padding: $section-pad;
   text-align: center;
   &__paragraph {
@@ -279,9 +259,9 @@ ul {
     }
   }
   &__card {
-    @include base-card-style(darken($general-bg-clr, 4%));
+    @include base-card-style($general-bg-clr);
     margin-left: 14px;
-    padding: $howto-card-pad;
+    padding: 30px 0 30px 25px;
     flex: 0 1 100%;
     &--bg-color {
       background-color: lighter($primary-clr);
@@ -298,7 +278,7 @@ ul {
     top: 25px;
   }
   &__icon {
-    color: darken($general-bg-clr, 45%);
+    color: darken($white, 45%);
     margin-left: 5px;
     width: 20px;  // Makes following text line up evenly
     &--color {
@@ -313,7 +293,7 @@ ul {
 
 /* || RESTAURANTS */
 .restaurants {
-  background-color: darken($general-bg-clr, 4%);
+  background-color: $general-bg-clr;
   &__wrap {
     @include max-page-width;
     display: grid;
@@ -335,7 +315,7 @@ ul {
     }
   }
   &__card {
-    @include base-card-style($general-bg-clr);
+    @include base-card-style($white);
     display: flex;
     flex-flow: wrap;
     overflow: hidden;
@@ -385,7 +365,7 @@ ul {
     @include object-size(30px, 80px);
     background-color: $tertiary-clr;
     border-radius: 3px;
-    color: $new-tag-clr;
+    color: darken($tertiary-clr, 50%);
     font-size: 14px;
     right: 15px;
     position: absolute;
@@ -399,11 +379,11 @@ ul {
 
 /* || FOOTER */
 .footer {
-  background-color: $footer-bg-clr;
+  background-color: #353535;
   &__wrap {
     @include max-page-width;
     color: $white;
-    padding: $footer-pad;
+    padding: 20px;
   }
   &__heading {
     @include title-font;
@@ -448,7 +428,7 @@ ul {
 /* || MENU */
 .menu {
   @include max-page-width;
-  background-color: darken($general-bg-clr, 4%);
+  background-color: $general-bg-clr;
   border-radius: 50px 50px 0 0;
   display: flex;
   justify-content: center;
@@ -528,7 +508,7 @@ ul {
     gap: 20px;
   }
   &__card {
-    @include base-card-style($general-bg-clr);
+    @include base-card-style($white);
     @include space-btwn;
     animation: card-load-anim $anim-duration ease-out backwards;
     cursor: pointer;
@@ -616,13 +596,12 @@ ul {
 .btn {
   @include base-btn-style($btn-clr, $btn-shadow);
   color: $white;
-  padding: $btn-pad;
+  padding: 16px 26px;
   position: relative;
   z-index: 1;
 
   // Styling for menu page button
   &--menu-pg {
-  //  margin: $center;  // Horizontally centers
     width: 175px;
   }
   
