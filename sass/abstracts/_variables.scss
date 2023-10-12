@@ -1,83 +1,72 @@
-/* || FONTS
- ******************************/
+// FONTS
 
- // Google fonts
- @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap');
- 
- $text-font: 'Roboto', sans-serif;
- $title-font: 'Shrikhand', cursive;
- 
- // Font weights
- $fw-thin: 300;
- $fw-reg: 400;
- $fw-thick: 700;
+// Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap');
 
-/* || COLOURS
- ******************************/
+$text-font: 'Roboto', sans-serif;
+$title-font: 'Shrikhand', cursive;
 
- $white: #FFF;
- $black: #000;
- 
- $primary-clr: #9356DC;
- $secondary-clr: #FF79DA;
- $tertiary-clr: #99E2D0;
- 
- $btn-clr: linear-gradient(to bottom right, $secondary-clr, $primary-clr);
- $btn-hov-clr: linear-gradient(to bottom right, lighten($secondary-clr, 2%), lighten($primary-clr, 2%));
- 
- $general-bg-clr: darken($white, 4%);
+// Font weights
+$fw-thin: 300;
+$fw-reg: 400;
+$fw-thick: 700;
 
-/* || BOX SHADOWS
- ******************************/
+// COLOURS
+$white: #FFF;
+$black: #000;
 
- $header-shadow: 0 0 3px 3px rgba($black, 0.1);
- $btn-shadow: 0 4px 8px 0 rgba($black, 0.3);
- $btn-hov-shadow: 0 4px 8px 0 rgba($black, 0.4);
- $card-shadow: 0 4px 8px 0 rgba($black, 0.1);
+$primary-clr: #9356DC;
+$secondary-clr: #FF79DA;
+$tertiary-clr: #99E2D0;
 
-/* || ANIMATIONS
- ******************************/
+$btn-clr: linear-gradient(to bottom right, $secondary-clr, $primary-clr);
+$btn-hov-clr: linear-gradient(to bottom right, lighten($secondary-clr, 2%), lighten($primary-clr, 2%));
 
- // For keyframe animations
- $anim-duration: 1000ms;
- $anim-delay: 200ms;
- $repeat: 3;
+$general-bg-clr: darken($white, 4%);
 
- // For loading page
- $ball-start-pos: 0;
- $bounce-height: -20px;
+// BOX SHADOWS
+$header-shadow: 0 0 3px 3px rgba($black, 0.1);
+$btn-shadow: 0 4px 8px 0 rgba($black, 0.3);
+$btn-hov-shadow: 0 4px 8px 0 rgba($black, 0.4);
+$card-shadow: 0 4px 8px 0 rgba($black, 0.1);
 
- // For card loading 
- $num-cards: 4;
- $card-offset: 20px;
- $card-end-pos: 0;
+// ANIMATIONS
 
- // For card icon slide transition
- $slide-width: 75px;
- $slide-duration: 700ms;
- 
- // For btn colour change transition
- $clr-change-dur: 250ms;
+// For keyframe animations
+$anim-duration: 1000ms;
+$anim-delay: 200ms;
+$repeat: 3;
 
-/* || PADDING
- ******************************/
- 
- $section-pad: 40px 20px 50px 20px;
- $card-content-pad: 15px;
+// For loading page
+$ball-start-pos: 0;
+$bounce-height: -20px;
 
-/* || VALUE DESCRIPTOR
- ******************************/
- 
- $site-max-width: 1200px;
- 
- $center: 0 auto;
- 
- $circle-border: 50%;
+// For card loading 
+$num-cards: 4;
+$card-offset: 20px;
+$card-end-pos: 0;
 
-/* || MEDIA BREAKPOINTS
- ******************************/
- $breakpoints: (
-   sm: 576px,
-   md: 768px,
-   lg: 992px
- );
+// For card icon slide transition
+$slide-width: 75px;
+$slide-duration: 700ms;
+
+// For btn colour change transition
+$clr-change-dur: 250ms;
+
+// PADDING
+$section-pad: 40px 20px 50px 20px;
+$card-content-pad: 15px;
+
+// VALUE DESCRIPTOR
+$site-max-width: 1200px;
+
+$center: 0 auto;
+
+$circle-border: 50%;
+
+// MEDIA BREAKPOINTS
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px
+);
