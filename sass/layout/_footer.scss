@@ -18,6 +18,12 @@
 
     a {
       color: $white;
+
+      &:hover {
+        .footer__text {
+          text-decoration: underline;
+        }
+      }
     }
 
     i {
