@@ -91,7 +91,7 @@
     &--anim {
       color: $secondary-clr;
       opacity: 0;
-      transition: opacity $clr-change-dur ease-out;
+      transition: opacity $clr-change-dur ease-in;
     }
   }
 }
@@ -188,7 +188,7 @@
 
     &--rotate {
       transform: rotate(0deg);
-      transition: transform $slide-duration ease-in-out;
+      transition: transform $rotate-duration $rotate-delay ease-in-out;
     }
   }
 }

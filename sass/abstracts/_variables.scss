@@ -48,10 +48,14 @@ $card-end-pos: 0;
 
 // For card icon slide transition
 $slide-width: 75px;
-$slide-duration: 700ms;
+$slide-duration: 1100ms;
+
+// For card icon rotate transition
+$rotate-duration: 1000ms;
+$rotate-delay: 100ms;
 
 // For btn colour change transition
-$clr-change-dur: 250ms;
+$clr-change-dur: 500ms;
 
 // For restaurant card hover transition
 $shadow-trans-dur: 200ms;

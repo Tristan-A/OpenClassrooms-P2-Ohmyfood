@@ -183,7 +183,7 @@
     &--anim {
       color: $secondary-clr;
       opacity: 0;
-      transition: opacity $clr-change-dur ease-out;
+      transition: opacity $clr-change-dur ease-in;
     }
   }
 
