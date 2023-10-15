@@ -120,17 +120,32 @@
     @include base-card-style($white);
     display: flex;
     flex-flow: wrap;
-    overflow: hidden;
 
     a {
       // Covers entire card
       @include cover-container;
       position: absolute;
     }
+
+    // For darker drop shadow when hovering over restaurant cards
+    &::before {
+      @include base-card-style(transparent, $btn-hov-shadow, absolute);
+      @include cover-container;
+      content:"";
+      opacity: 0;
+      transition: opacity $shadow-trans-dur ease-in-out;
+    }
+
+    &:hover {
+      &::before{
+        opacity: 1;
+      }
+    }
   }
 
   &__img-wrap {
     aspect-ratio: 16/9;
+    border-radius: 20px 20px 0 0;
     flex: 0 1 100%;
     overflow: hidden;
 

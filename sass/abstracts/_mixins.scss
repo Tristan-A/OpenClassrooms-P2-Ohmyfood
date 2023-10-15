@@ -7,11 +7,11 @@
 }
 
 // Sets base style for cards
-@mixin base-card-style($bg-clr) {
+@mixin base-card-style($bg-clr, $shadow: $card-shadow, $position: relative) {
   background-color: $bg-clr;
   border-radius: 20px;
-  box-shadow: $card-shadow;
-  position: relative;
+  box-shadow: $shadow;
+  position: $position;
 }
 
 // Vertical and horizontal centering with flex
